@@ -1,0 +1,53 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts/fonts.css);
+* {
+  border: 1px solid red;
+}
+.title {
+  margin: 0;
+  font: 700 40px/40px 'Golos', sans-serif;
+}
+
+.page {
+  width: 1440px;
+  margin: auto;
+  padding: 0 60px;
+}
+
+.header {
+  height: 72px;
+  width: 100%;
+  background-color: aqua;
+  text-align: center;
+}
+.breadcrumbs {
+  height: 80px;
+  font-size: 40px;
+  font: 700 40px/40px 'Golos', sans-serif;
+  width: 100%;
+  background-color: aquamarine;
+  text-align: center;
+}
+
+.content {
+  background-color: yellow;
+  width: 872px;
+  height: 580px;
+}
+.button {
+  width: 184px;
+  height: 48px;
+}
+.sidebar {
+  width: 424px;
+  height: 1000px;
+
+}
+.blocks {
+  display: flex;
+}
+.submit {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+}
