@@ -96,13 +96,10 @@
   width: 184px;
   height: 48px;
 }
-.sidebar {
-  width: 424px;
-  height: 1000px;
 
-}
 .blocks {
   display: flex;
+
 }
 .submit {
   height: 20px;
