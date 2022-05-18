@@ -1,8 +1,24 @@
 @import url(../vendor/normalize.css);
 @import url(../vendor/fonts/fonts.css);
-* {
-  border: 1px solid red;
-}
+@import url(../blocks/sidebar-content/sidebar-content.css);
+@import url(../blocks/sidebar-content/__container/sidebar-content__container.css);
+@import url(../blocks/sidebar-content/__header/sidebar-content__header.css);
+@import url(../blocks/sidebar-content/__wrapper/sidebar-content__wrapper.css);
+@import url(../blocks/sidebar-content/__list/sidebar-content__list.css);
+@import url(../blocks/sidebar-content/__item/sidebar-content__item.css);
+@import url(../blocks/sidebar-content/__item-icon/sidebar-content__item-icon.css);
+@import url(../blocks/sidebar-content/__item-icon/_active/sidebar-content__item-icon_active.css);
+@import url(../blocks/sidebar-content/__options/sidebar-content__options.css);
+@import url(../blocks/sidebar-content/__options/__options_active/sidebar-content__options_active.css);
+@import url(../blocks/sidebar-content/__option-wrapper/sidebar-content__option-wrapper.css);
+@import url(../blocks/sidebar-content/__option-icon/sidebar-content__option-icon.css);
+@import url(../blocks/sidebar-content/__option/sidebar-content__option.css);
+@import url(../blocks/sidebar-content/__option/_active/sidebar-content__option_active.css);
+
+
+
+
+
 .title {
   margin: 0;
   font: 700 40px/40px 'Golos', sans-serif;
@@ -10,8 +26,11 @@
 
 .page {
   width: 1440px;
+
   margin: auto;
   padding: 0 60px;
+  font-family: 'Golos', Helvetica, Arial, sans-serif;
+  color: #212329;
 }
 
 .header {
@@ -38,13 +57,10 @@
   width: 184px;
   height: 48px;
 }
-.sidebar {
-  width: 424px;
-  height: 1000px;
 
-}
 .blocks {
   display: flex;
+
 }
 .submit {
   height: 20px;
