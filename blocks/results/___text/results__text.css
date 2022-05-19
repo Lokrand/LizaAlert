@@ -1,0 +1,9 @@
+.results__text {
+  max-width: 680px;
+  margin: 0 auto;
+  padding-top: 24px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+}
