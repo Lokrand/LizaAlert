@@ -19,20 +19,244 @@
       <div class="blocks">
         <div>
           <section class="content">
-            <p>Видео + тесты + кнопка + попап в зависимости от ответа</p>
+            <div class="content__block">
+              <h1 class="content__title">Тест</h1>
+              <p class="content__condition">Посмотреть условия</p>
+            </div>
+            <h2 class="content__test-title">1. В каких случаях перспективно применение следовых кинологических расчётов?</h2>
+            <div class="test">
+              <form name="testFirst" onsubmit="return validateForm()" onclick="return ifCurrect()" method="post">
+                <div class="checkbox">
+                  <input type="checkbox" class="checkbox__input checkbox__input_success" id="checkbox_1" name="checkbox1">
+                  <label for="checkbox_1" class="checkbox__label checkbox__label_success">Оказание помощи гражданам,
+                    оказавшимся в зонах бедствия или пропавшим в безлюдной местности</label>
+                </div>
+
+                <div class="checkbox">
+                  <input type="checkbox" class="checkbox__input" id="checkbox_2" name="checkbox2">
+                  <label for="checkbox_2" class="checkbox__label">Обучение животного идти как по горячему,
+                    так и по остывшему следу</label>
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" class="checkbox__input" id="checkbox_3" name="checkbox3">
+                  <label for="checkbox_3" class="checkbox__label">Поиск тел и их остатков с применением
+                    специально обученных собак</label>
+                </div>
+              </form>
+            </div>
+            <h2 class="content__test-title">2. С какого возраста следует начинать дрессировку по курсу ПСС?</h2>
+            <form name="testSecond" onsubmit="return validateForm()" onclick="return ifCurrect()" method="post">
+              <div class="radio">
+                <input type="radio" name="answer" class="radio__input" id="radio_1" >
+                <label for="radio_1" class="radio__label">6 месяцев</label>
+              </div>
+              <div class="radio">
+                <input type="radio" name="answer" class="radio__input" id="radio_2" >
+                <label for="radio_2" class="radio__label">1–1,5 года</label>
+              </div>
+              <div class="radio">
+                <input type="radio" name="answer" class="radio__input" id="radio_3" >
+                <label for="radio_3" class="radio__label">3 года</label>
+              </div>
+            </form>
+            <button type="submit" class="content__button">Показать результат</button>
           </section>
           <div class="action-panel">
-            <button class="button">Назад</button>
-            <button class="button">Далее</button>
+            <button class="button">← Назад</button>
+            <button class="button">Далее →</button>
           </div>
         </div>
-        <section class="sidebar">
-          <p>Панель навигации</p>
-          <img src="./images/Vector.svg" alt="" class="submit">
-        </section>
+        <aside class="sidebar-content">
+          <div class="sidebar-content__container">
+            <h2 class="sidebar-content__header">Содержание</h2>
+
+            <ul class="sidebar-content__list">
+              <li>
+                <div class="sidebar-content__wrapper">
+                  <p class="sidebar-content__item">
+                    1. В каких случаях перспективно применение следовых кинологических
+                    расчётов
+                  </p>
+                  <span data-path="one" class="sidebar-content__item-icon"></span>
+                </div>
+
+                <ul data-target="one" class="sidebar-content__options">
+                  <li class="sidebar-content__option-wrapper">
+                    <span class="sidebar-content__option-icon">
+                      <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 6.94C15.9896 6.84813 15.9695 6.75763 15.94 6.67V6.58C15.8919 6.47718 15.8278 6.38267 15.75 6.3L9.75 0.3C9.66734 0.222216 9.57282 0.158081 9.47 0.11H9.38L9.06 0H3C2.20435 0 1.44129 0.316071 0.87868 0.87868C0.316071 1.44129 0 2.20435 0 3V17C0 17.7956 0.316071 18.5587 0.87868 19.1213C1.44129 19.6839 2.20435 20 3 20H13C13.7956 20 14.5587 19.6839 15.1213 19.1213C15.6839 18.5587 16 17.7956 16 17V7C16 7 16 7 16 6.94ZM10 3.41L12.59 6H10V3.41ZM14 17C14 17.2652 13.8946 17.5196 13.7071 17.7071C13.5196 17.8946 13.2652 18 13 18H3C2.73478 18 2.48043 17.8946 2.29289 17.7071C2.10536 17.5196 2 17.2652 2 17V3C2 2.73478 2.10536 2.48043 2.29289 2.29289C2.48043 2.10536 2.73478 2 3 2H8V7C8 7.26522 8.10536 7.51957 8.29289 7.70711C8.48043 7.89464 8.73478 8 9 8H14V17Z" fill="#212329"/>
+                        </svg>
+                    </span>
+                    <p class="sidebar-content__option">Урок</p>
+                  </li>
+                  </ul>
+              </li>
+
+              <li>
+                <div class="sidebar-content__wrapper">
+                  <p class="sidebar-content__item">
+                    2. Необходимые обеспечительные меры для успешного применения
+                    следовых (розыскных собак)
+                  </p>
+                  <span data-path="two" class="sidebar-content__item-icon"></span>
+                </div>
+
+                <ul data-target="two" class="sidebar-content__options">
+                  <li class="sidebar-content__option-wrapper">
+                    <span class="sidebar-content__option-icon">
+                      <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 6.94C15.9896 6.84813 15.9695 6.75763 15.94 6.67V6.58C15.8919 6.47718 15.8278 6.38267 15.75 6.3L9.75 0.3C9.66734 0.222216 9.57282 0.158081 9.47 0.11H9.38L9.06 0H3C2.20435 0 1.44129 0.316071 0.87868 0.87868C0.316071 1.44129 0 2.20435 0 3V17C0 17.7956 0.316071 18.5587 0.87868 19.1213C1.44129 19.6839 2.20435 20 3 20H13C13.7956 20 14.5587 19.6839 15.1213 19.1213C15.6839 18.5587 16 17.7956 16 17V7C16 7 16 7 16 6.94ZM10 3.41L12.59 6H10V3.41ZM14 17C14 17.2652 13.8946 17.5196 13.7071 17.7071C13.5196 17.8946 13.2652 18 13 18H3C2.73478 18 2.48043 17.8946 2.29289 17.7071C2.10536 17.5196 2 17.2652 2 17V3C2 2.73478 2.10536 2.48043 2.29289 2.29289C2.48043 2.10536 2.73478 2 3 2H8V7C8 7.26522 8.10536 7.51957 8.29289 7.70711C8.48043 7.89464 8.73478 8 9 8H14V17Z" fill="#212329"/>
+                        </svg></span>
+                    <p class="sidebar-content__option">Урок</p>
+                  </li>
+                  </ul>
+
+              </li>
+
+              <li>
+                <div class="sidebar-content__wrapper">
+                  <p class="sidebar-content__item">
+                    3. Особенности привлечения следовых расчётов
+                    на&nbsp;ПСР&nbsp;и&nbsp;особенности
+                    взаимодействия
+                  </p>
+                  <span data-path="three" class="sidebar-content__item-icon"></span>
+                </div>
+
+                <ul data-target="three" class="sidebar-content__options">
+                  <li class="sidebar-content__option-wrapper">
+                    <span class="sidebar-content__option-icon"><img src="./images/icon-green.svg" alt="Иконка"></span>
+                    <p class="sidebar-content__option">Урок</p>
+                  </li>
+                  <li class="sidebar-content__option-wrapper">
+                    <span class="sidebar-content__option-icon"><img src="./images/icon-green.svg" alt="Иконка"></span>
+                    <p class="sidebar-content__option">Вебинар</p>
+                  </li>
+                  <li class="sidebar-content__option-wrapper">
+                    <span class="sidebar-content__option-icon"><img src="./images/icon-green.svg" alt="Иконка"></span>
+                    <p class="sidebar-content__option">Урок</p>
+                  </li>
+                  <li class="sidebar-content__option-wrapper">
+                    <span class="sidebar-content__option-icon"><img src="./images/icon-green.svg" alt="Иконка"></span>
+                    <p class="sidebar-content__option">Видео</p>
+                  </li>
+                  <li class="sidebar-content__option-wrapper">
+                    <span class="sidebar-content__option-icon"><img src="./images/icon-green.svg" alt="Иконка"></span>
+                    <p class="sidebar-content__option">Тест</p>
+                  </li>
+                </ul>
+
+              </li>
+
+              <li>
+                <div class="sidebar-content__wrapper">
+                  <p class="sidebar-content__item">
+                    4. Корректная постановка задачи кинологу и особенности
+                    её&nbsp;исполнения
+                  </p>
+                  <span data-path="four" class="sidebar-content__item-icon"></span>
+                </div>
+
+                <ul data-target="four" class="sidebar-content__options">
+                  <li class="sidebar-content__option-wrapper">
+                    <span class="sidebar-content__option-icon"><img src="./images/icon-green.svg" alt="Иконка"></span>
+                    <p class="sidebar-content__option">Вебинар</p>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <div class="sidebar-content__wrapper">
+                  <p class="sidebar-content__item">
+                    5. Работа «второго номера» совместно со следовым кинологическим
+                    расчётом
+                  </p>
+                  <span  data-path="five" class="sidebar-content__item-icon"></span>
+                </div>
+
+                <ul data-target="five" class="sidebar-content__options">
+                  <li class="sidebar-content__option-wrapper">
+                    <span class="sidebar-content__option-icon"><img src="./images/icon-green.svg" alt="Иконка"></span>
+                    <p class="sidebar-content__option">Дрессировка поисково-спасательных собак</p>
+                  </li>
+                  <li class="sidebar-content__option-wrapper">
+                    <span class="sidebar-content__option-icon"><img src="./images/icon-green.svg" alt="Иконка"></span>
+                    <p class="sidebar-content__option">Вебинар</p>
+                  </li>
+                  <li class="sidebar-content__option-wrapper">
+                    <span class="sidebar-content__option-icon"><img src="./images/icon-green.svg" alt="Иконка"></span>
+                    <p class="sidebar-content__option">Урок</p>
+                  </li>
+                  <li class="sidebar-content__option-wrapper">
+                    <span class="sidebar-content__option-icon">
+                      <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.53 1.15C19.378 1.06223 19.2055 1.01603 19.03 1.01603C18.8545 1.01603 18.682 1.06223 18.53 1.15L15 2.89C14.9715 2.11357 14.6429 1.37847 14.0834 0.839439C13.5238 0.300405 12.777 -0.000521775 12 6.79157e-07H3C2.20435 6.79157e-07 1.44129 0.316071 0.87868 0.87868C0.316071 1.44129 0 2.20435 0 3V9C0 9.79565 0.316071 10.5587 0.87868 11.1213C1.44129 11.6839 2.20435 12 3 12H12C12.777 12.0005 13.5238 11.6996 14.0834 11.1606C14.6429 10.6215 14.9715 9.88643 15 9.11L18.56 10.89C18.6963 10.9599 18.8468 10.9975 19 11C19.1872 11.0006 19.3709 10.9486 19.53 10.85C19.6741 10.7599 19.7929 10.6346 19.8751 10.4859C19.9574 10.3372 20.0003 10.1699 20 10V2C20.0003 1.83006 19.9574 1.66283 19.8751 1.51411C19.7929 1.36538 19.6741 1.24007 19.53 1.15ZM13 9C13 9.26522 12.8946 9.51957 12.7071 9.70711C12.5196 9.89464 12.2652 10 12 10H3C2.73478 10 2.48043 9.89464 2.29289 9.70711C2.10536 9.51957 2 9.26522 2 9V3C2 2.73478 2.10536 2.48043 2.29289 2.29289C2.48043 2.10536 2.73478 2 3 2H12C12.2652 2 12.5196 2.10536 12.7071 2.29289C12.8946 2.48043 13 2.73478 13 3V9ZM18 8.38L15 6.88V5.12L18 3.62V8.38Z" fill="#F06000"/>
+                        </svg>
+                    </span>
+                    <p class="sidebar-content__option sidebar-content__option_active">Видео</p>
+                  </li>
+                  <li class="sidebar-content__option-wrapper">
+                    <span class="sidebar-content__option-icon">
+                      <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 6.94C15.9896 6.84813 15.9695 6.75763 15.94 6.67V6.58C15.8919 6.47718 15.8278 6.38267 15.75 6.3L9.75 0.3C9.66734 0.222216 9.57282 0.158081 9.47 0.11C9.44015 0.10576 9.40985 0.10576 9.38 0.11C9.27841 0.0517412 9.16622 0.0143442 9.05 0H3C2.20435 0 1.44129 0.316071 0.87868 0.87868C0.316071 1.44129 0 2.20435 0 3V17C0 17.7956 0.316071 18.5587 0.87868 19.1213C1.44129 19.6839 2.20435 20 3 20H13C13.7956 20 14.5587 19.6839 15.1213 19.1213C15.6839 18.5587 16 17.7956 16 17V7C16 7 16 7 16 6.94ZM10 3.41L12.59 6H11C10.7348 6 10.4804 5.89464 10.2929 5.70711C10.1054 5.51957 10 5.26522 10 5V3.41ZM14 17C14 17.2652 13.8946 17.5196 13.7071 17.7071C13.5196 17.8946 13.2652 18 13 18H3C2.73478 18 2.48043 17.8946 2.29289 17.7071C2.10536 17.5196 2 17.2652 2 17V3C2 2.73478 2.10536 2.48043 2.29289 2.29289C2.48043 2.10536 2.73478 2 3 2H8V5C8 5.79565 8.31607 6.55871 8.87868 7.12132C9.44129 7.68393 10.2044 8 11 8H14V17ZM10.29 10.29L7 13.59L5.71 12.29C5.5217 12.1017 5.2663 11.9959 5 11.9959C4.7337 11.9959 4.4783 12.1017 4.29 12.29C4.1017 12.4783 3.99591 12.7337 3.99591 13C3.99591 13.2663 4.1017 13.5217 4.29 13.71L6.29 15.71C6.38296 15.8037 6.49356 15.8781 6.61542 15.9289C6.73728 15.9797 6.86799 16.0058 7 16.0058C7.13201 16.0058 7.26272 15.9797 7.38458 15.9289C7.50644 15.8781 7.61704 15.8037 7.71 15.71L11.71 11.71C11.8983 11.5217 12.0041 11.2663 12.0041 11C12.0041 10.7337 11.8983 10.4783 11.71 10.29C11.5217 10.1017 11.2663 9.99591 11 9.99591C10.7337 9.99591 10.4783 10.1017 10.29 10.29Z" fill="#212329"/>
+                        </svg>
+                    </span>
+                    <p class="sidebar-content__option">Тест</p>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <div class="sidebar-content__wrapper">
+                  <p class="sidebar-content__item">
+                    6. Оценка качества и особенности анализа результата проделанной
+                    следовым кинологическим расчётом работы
+                  </p>
+                  <span data-path="six" class="sidebar-content__item-icon"></span>
+                </div>
+
+                <ul data-target="six" class="sidebar-content__options">
+                  <li class="sidebar-content__option-wrapper">
+                    <span class="sidebar-content__option-icon">
+                      <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 6.94C15.9896 6.84813 15.9695 6.75763 15.94 6.67V6.58C15.8919 6.47718 15.8278 6.38267 15.75 6.3L9.75 0.3C9.66734 0.222216 9.57282 0.158081 9.47 0.11H9.38L9.06 0H3C2.20435 0 1.44129 0.316071 0.87868 0.87868C0.316071 1.44129 0 2.20435 0 3V17C0 17.7956 0.316071 18.5587 0.87868 19.1213C1.44129 19.6839 2.20435 20 3 20H13C13.7956 20 14.5587 19.6839 15.1213 19.1213C15.6839 18.5587 16 17.7956 16 17V7C16 7 16 7 16 6.94ZM10 3.41L12.59 6H10V3.41ZM14 17C14 17.2652 13.8946 17.5196 13.7071 17.7071C13.5196 17.8946 13.2652 18 13 18H3C2.73478 18 2.48043 17.8946 2.29289 17.7071C2.10536 17.5196 2 17.2652 2 17V3C2 2.73478 2.10536 2.48043 2.29289 2.29289C2.48043 2.10536 2.73478 2 3 2H8V7C8 7.26522 8.10536 7.51957 8.29289 7.70711C8.48043 7.89464 8.73478 8 9 8H14V17Z" fill="#212329"/>
+                        </svg>
+                    </span>
+                    <p class="sidebar-content__option">Урок</p>
+                  </li>
+                  </ul>
+
+              </li>
+
+              <li>
+                <div class="sidebar-content__wrapper">
+                  <p class="sidebar-content__item">
+                    7. Особенности и пределы использования РПРС ом&nbsp;полученной&nbsp;в
+                    ходе
+                    применения специальной&nbsp;следовой собаки информации в целях успешного разрешения поисков
+                  </p>
+                  <span data-path="seven" class="sidebar-content__item-icon"></span>
+                </div>
+
+                <ul data-target="seven" class="sidebar-content__options">
+                  <li class="sidebar-content__option-wrapper">
+                    <span class="sidebar-content__option-icon">
+                      <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 6.94C15.9896 6.84813 15.9695 6.75763 15.94 6.67V6.58C15.8919 6.47718 15.8278 6.38267 15.75 6.3L9.75 0.3C9.66734 0.222216 9.57282 0.158081 9.47 0.11H9.38L9.06 0H3C2.20435 0 1.44129 0.316071 0.87868 0.87868C0.316071 1.44129 0 2.20435 0 3V17C0 17.7956 0.316071 18.5587 0.87868 19.1213C1.44129 19.6839 2.20435 20 3 20H13C13.7956 20 14.5587 19.6839 15.1213 19.1213C15.6839 18.5587 16 17.7956 16 17V7C16 7 16 7 16 6.94ZM10 3.41L12.59 6H10V3.41ZM14 17C14 17.2652 13.8946 17.5196 13.7071 17.7071C13.5196 17.8946 13.2652 18 13 18H3C2.73478 18 2.48043 17.8946 2.29289 17.7071C2.10536 17.5196 2 17.2652 2 17V3C2 2.73478 2.10536 2.48043 2.29289 2.29289C2.48043 2.10536 2.73478 2 3 2H8V7C8 7.26522 8.10536 7.51957 8.29289 7.70711C8.48043 7.89464 8.73478 8 9 8H14V17Z" fill="#212329"/>
+                        </svg>
+                    </span>
+                    <p class="sidebar-content__option">Урок</p>
+                  </li>
+                  </ul>
+
+              </li>
+
+            </ul>
+          </div>
+        </aside>
       </div>
     </main>
   </div>
-
+  <script src="./script/script.js"></script>
 </body>
 </html>
