@@ -1,5 +1,14 @@
 @import url(../vendor/normalize.css);
 @import url(../vendor/fonts/fonts.css);
+@import url(../blocks/page/page.css);
+
+@import url(../blocks/content/content.css);
+@import url(../blocks/content/__block/content__block.css);
+@import url(../blocks/content/__button/_active/content__button_active.css);
+@import url(../blocks/content/__button/content__button.css);
+@import url(../blocks/content/__condition/content__condition.css);
+@import url(../blocks/content/__test-title/content__test-title.css);
+@import url(../blocks/content/__title/content__title.css);
 
 
 @import url(../blocks/sidebar-content/sidebar-content.css);
@@ -23,12 +32,7 @@
   font: 700 40px/40px 'Golos', sans-serif;
 }
 
-.page {
-  width: 1440px;
-  margin: auto;
-  padding: 0 60px;
-  font-family: 'Golos', Helvetica, Arial, sans-serif;
-}
+
 
 .header {
   height: 72px;
@@ -45,14 +49,7 @@
   text-align: center;
 }
 
-.content {
-  width: 872px;
-  box-shadow: 0px 0px 4px rgba(231, 232, 235, 0.6), 0px 4px 16px rgba(231, 232, 235, 0.6);
-  border-radius: 16px;
-  background-color: white;
-  margin-top: 32px;
-  margin-right: 24px;
-}
+
 .button {
   width: 184px;
   height: 48px;
@@ -70,43 +67,16 @@
   width: 20px;
   margin-right: 10px;
 }
-.content__title {
-  margin: 32px 0 0 32px;
-  font: 700 24px/28px 'Golos', sans-serif;
-}
 
-.content__block {
-  display: flex;
-  justify-content: space-between;
-}
 
-.content__condition {
-  margin: 34px 32px 0 0;
-  font: 500 18px/24px 'Golos', sans-serif;
-  cursor: pointer;
-  transition: text-decoration .2s linear;
-}
 
-.content__condition:hover {
-  text-decoration: underline;
-}
 
-.content__test-title {
-  margin: 32px 0 0 32px;
-  font: 700 18px/24px 'Golos', sans-serif;
-}
 
-.content__button {
-  width: 224px;
-  height: 48px;
-  border-radius: 16px;
-  padding: 12px 24px;
-  margin: 32px 324px;
-  background-color: #E6E7EB;
-  border: none;
-  font: 500 18px/24px 'Golos', sans-serif;
-  color: #9397A3;
-}
+
+
+
+
+
 
 .checkbox {
   position: relative;
@@ -215,24 +185,99 @@
   color: #F06000;
 }
 
-.content__button_active {
-  background-color: #F06000;
-  color: white;
-  cursor: pointer;
-  transition: opacity .2s linear;
-}
 
-.content__button_active:hover {
-  opacity: .6;
-}
-
+/* Для чекбокса верный ответ */
 /* .checkbox__label_success {
   color: #008000;
 }
 
 .checkbox__label_success::before {
   background: none;
+  background: url('/images/Vector.svg'), no-repeat;
+  top: 2px;
+  left: 2px;
+
 } */
+
+
+
+
+/* Для чекбокса не выбранный ответ */
+/* .checkbox__label_correct-answer::before {
+  background: url('/images/FirstTestCorrectAnswer.svg'), no-repeat;
+  top: 6px;
+  left: 3px;
+  width: 15px;
+  height: 12px;
+} */
+
+
+
+
+/* Для радио неверно выбранный ответ */
+/* .radio__label_wrong-answer {
+  color: #FF0000;
+}
+
+.radio__label_wrong-answer::before {
+  background: url('/images/TestSecondWrong.svg'), no-repeat;
+  width: 20px;
+  height: 20px;
+  top: 3px;
+  border: none;
+} */
+
+.radio__label_currect-answer::before {
+  border: none;
+  top: 6px;
+  left: 3px;
+  width: 15px;
+  height: 12px;
+  background: url('/images/FirstTestCorrectAnswer.svg'), no-repeat;
+}
+
+/* Для радио ответ, который не выбран и не верный */
+/* .radio__label_answer-cross::before {
+  border: none;
+  top: 7px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  background: url('/images/SecontTestCross.svg'), no-repeat;
+} */
+
+
+
+
+/* Для радио зелёный верный ответ */
+/* .radio__label_success-answer {
+  color: green;
+}
+
+.radio__label_success-answer::before {
+  border: none;
+  width: 20px;
+  height: 20px;
+  background: url('/images/Vector.svg'), no-repeat;
+  top: 2px;
+  left: 2px;
+} */
+
+
+/* Для радио - галочка */
+/* .radio__label_correct-answer::before {
+  border: none;
+  top: 6px;
+  left: 3px;
+  width: 15px;
+  height: 12px;
+  background: url('/images/FirstTestCorrectAnswer.svg'), no-repeat;
+} */
+
+
+
+
+
 
 /* .checkbox__input_success {
   width: 20px;

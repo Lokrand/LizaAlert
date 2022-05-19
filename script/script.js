@@ -1,3 +1,8 @@
+const testBut = document.querySelector('#test-button').content;
+let cont = document.querySelector('#testButContain');
+const userElement = testBut.cloneNode(true);
+// userElement.querySelector('.content__button').textContent = 'Показать результат';
+cont.append(userElement);
 const testCheck1 = document.querySelector('#checkbox_1');
 const testCheck2 = document.querySelector('#checkbox_2');
 const testCheck3 = document.querySelector('#checkbox_3');
@@ -13,14 +18,47 @@ function ifCurrect() {
   for (let i = 0; i < document.forms["testSecond"].elements.length; i++) {
     if ((x||y||z)&&document.forms["testSecond"].elements[i].checked) showResult()
   }
+  if (testButton.classList.contains('content__button_active')) {
+    testButton.addEventListener('click', () => {
+    testButton.classList.toggle('content__button_active')
+  })
+  }
 }
 
 let form = document.forms.testFirst;
 let check1 = form.elements.checkbox1;
 
-testButton.addEventListener('click', () => {
-  testButton.classList.toggle('content__button_active')
-})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // SideBar //
 const iconDropDown = document.querySelectorAll(".sidebar-content__item-icon");

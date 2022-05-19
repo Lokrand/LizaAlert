@@ -34,7 +34,7 @@
 
                 <div class="checkbox">
                   <input type="checkbox" class="checkbox__input" id="checkbox_2" name="checkbox2">
-                  <label for="checkbox_2" class="checkbox__label">Обучение животного идти как по горячему,
+                  <label for="checkbox_2" class="checkbox__label  checkbox__label_correct-answer">Обучение животного идти как по горячему,
                     так и по остывшему следу</label>
                 </div>
                 <div class="checkbox">
@@ -48,18 +48,22 @@
             <form name="testSecond" onsubmit="return validateForm()" onclick="return ifCurrect()" method="post">
               <div class="radio">
                 <input type="radio" name="answer" class="radio__input" id="radio_1" >
-                <label for="radio_1" class="radio__label">6 месяцев</label>
+                <label for="radio_1" class="radio__label radio__label_wrong-answer">6 месяцев</label>
               </div>
               <div class="radio">
                 <input type="radio" name="answer" class="radio__input" id="radio_2" >
-                <label for="radio_2" class="radio__label">1–1,5 года</label>
+                <label for="radio_2" class="radio__label radio__label_answer-cross">1–1,5 года</label>
               </div>
               <div class="radio">
                 <input type="radio" name="answer" class="radio__input" id="radio_3" >
-                <label for="radio_3" class="radio__label">3 года</label>
+                <label for="radio_3" class="radio__label radio__label_success-answer radio__label_correct-answer">3 года</label>
               </div>
             </form>
-            <button type="submit" class="content__button">Показать результат</button>
+            <div id="testButContain">
+              <template id="test-button">
+                <button type="submit" class="content__button">Показать результат</button>
+              </template>
+            </div>
           </section>
           <div class="action-panel">
             <button class="button">← Назад</button>
