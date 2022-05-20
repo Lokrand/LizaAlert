@@ -2,6 +2,7 @@
 @import url(../vendor/fonts/fonts.css);
 @import url(../blocks/page/page.css);
 
+/* Основной тест */
 @import url(../blocks/content/content.css);
 @import url(../blocks/content/__block/content__block.css);
 @import url(../blocks/content/__button/_active/content__button_active.css);
@@ -10,7 +11,24 @@
 @import url(../blocks/content/__test-title/content__test-title.css);
 @import url(../blocks/content/__title/content__title.css);
 
+@import url(../blocks/checkbox/checkbox.css);
+@import url(../blocks/checkbox/__input/checkbox__input.css);
+@import url(../blocks/checkbox/__label/checkbox__label.css);
+@import url(../blocks/checkbox/__label-success/checkbox__label-success.css);
+@import url(../blocks/checkbox/__label-correct/checkbox__label-correct.css);
+/* Окно результата  */
+@import url(../blocks/completed-course/completed-course.css);
+@import url(../blocks/completed-course/__title/completed-course__title.css);
+@import url(../blocks/completed-course/__subtitle/completed-course__subtitle.css);
+@import url(../blocks/completed-course/__text/completed-course__text.css);
 
+@import url(../blocks/results/results.css);
+@import url(../blocks/results/___text/results__text.css);
+@import url(../blocks/results/__green/results__green.css);
+@import url(../blocks/results/__red/results__red.css);
+@import url(../blocks/results/__title/results__title.css);
+
+/* SideBar */
 @import url(../blocks/sidebar-content/sidebar-content.css);
 @import url(../blocks/sidebar-content/__container/sidebar-content__container.css);
 @import url(../blocks/sidebar-content/__header/sidebar-content__header.css);
@@ -26,13 +44,10 @@
 @import url(../blocks/sidebar-content/__option/sidebar-content__option.css);
 @import url(../blocks/sidebar-content/__option/_active/sidebar-content__option_active.css);
 
-
 .title {
   margin: 0;
   font: 700 40px/40px 'Golos', sans-serif;
 }
-
-
 
 .header {
   height: 72px;
@@ -48,7 +63,6 @@
   background-color: aquamarine;
   text-align: center;
 }
-
 
 .button {
   width: 184px;
@@ -70,76 +84,20 @@
 
 
 
+/* Тут начало стилей кнопок */
 
-
-
-
-
-
-
-
-.checkbox {
-  position: relative;
-  margin-top: 16px;
-  margin-left: 2px;
-}
-
-.checkbox__input, .radio__input {
+.radio__input {
   -webkit-appearance: none;
   appearance: none;
   position: absolute;
 }
-
-.checkbox__label {
-  padding-left: 30px;
-  font: 400 18px/24px 'Golos', sans-serif;
-  cursor: pointer;
-  transition: color .05s linear;
-}
-
-.checkbox__label::before {
-  content: '';
-  display: block;
-  width: 20px;
-  height: 20px;
-  /* border: 2px solid #212329;
-  border-radius: 4px; */
-  background: url('/images/blackSquare.svg');
-  position: absolute;
-  top: 1px;
-  left: 0;
-  z-index: 1;
-}
-
-.checkbox__label::after {
-  content: '';
-  display: block;
-  width: 20px;
-  height: 20px;
-  background: url('/images/Test_selected.svg') no-repeat;
-  background-size: 20px 20px;
-  opacity: 0;
-  position: absolute;
-  top: 1px;
-  left: 0;
-  z-index: 2;
-
-  transition: opacity .05s linear;
-}
-
-.checkbox__input:checked + .checkbox__label::after {
-  opacity: 1;
-}
-.checkbox__input:checked + .checkbox__label {
-  color: #F06000;
-}
-
 
 .radio {
   position: relative;
   margin-left: 33px;
   margin-top: 16px;
 }
+
 .radio__label {
   padding-left: 31px;
   font: 400 18px/24px 'Golos', sans-serif;
@@ -159,6 +117,7 @@
   left: 0;
   z-index: 1;
 }
+
 .radio__label::after {
   content: '';
   display: block;
@@ -186,34 +145,6 @@
 }
 
 
-/* Для чекбокса верный ответ */
-/* .checkbox__label_success {
-  color: #008000;
-}
-
-.checkbox__label_success::before {
-  background: none;
-  background: url('/images/Vector.svg'), no-repeat;
-  top: 2px;
-  left: 2px;
-
-} */
-
-
-
-
-/* Для чекбокса не выбранный ответ */
-/* .checkbox__label_correct-answer::before {
-  background: url('/images/FirstTestCorrectAnswer.svg'), no-repeat;
-  top: 6px;
-  left: 3px;
-  width: 15px;
-  height: 12px;
-} */
-
-
-
-
 /* Для радио неверно выбранный ответ */
 /* .radio__label_wrong-answer {
   color: #FF0000;
@@ -237,20 +168,31 @@
 }
 
 /* Для радио ответ, который не выбран и не верный */
-/* .radio__label_answer-cross::before {
+.radio__label_answer-cross {
+  padding-left: 31px;
+  font: 400 18px/24px 'Golos', sans-serif;
+}
+
+
+.radio__label_answer-cross::before {
   border: none;
-  top: 7px;
-  left: 3px;
-  width: 14px;
-  height: 14px;
-  background: url('/images/SecontTestCross.svg'), no-repeat;
-} */
-
-
-
+  top: 1px;
+  left: 0px;
+  height: 22px;
+  width: 22px;
+  background: url('/images/RadioLabelCross.svg'), no-repeat;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
 
 /* Для радио зелёный верный ответ */
-/* .radio__label_success-answer {
+.radio__label_success-answer {
+  padding-left: 31px;
+  font: 400 18px/24px 'Golos', sans-serif;
   color: green;
 }
 
@@ -261,8 +203,13 @@
   background: url('/images/Vector.svg'), no-repeat;
   top: 2px;
   left: 2px;
-} */
-
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
 
 /* Для радио - галочка */
 /* .radio__label_correct-answer::before {
@@ -273,11 +220,6 @@
   height: 12px;
   background: url('/images/FirstTestCorrectAnswer.svg'), no-repeat;
 } */
-
-
-
-
-
 
 /* .checkbox__input_success {
   width: 20px;
@@ -291,4 +233,53 @@
   border-bottom: 1px solid #E6E7EB;
 }
 
+.content__button_retake-wrong {
+  width: 176px;
+  height: 48px;
+  margin-left: 348px;
+  padding-left: 48px;
+  background-color: #F06000;
+  color: #fff;
+}
 
+.content__button_retake-wrong::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+  background: url('/images/testRetake.svg');
+  background-repeat: no-repeat;
+}
+
+.content__button_retake-success {
+  width: 176px;
+  height: 48px;
+  margin-left: 348px;
+  padding-left: 48px;
+  background-color: white;
+  color: #F06000;
+  border: 1.2px solid #E6E7EB;
+}
+
+.content__button_retake-success::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+  background: url('/images/TestRetakeOrange.svg');
+  background-repeat: no-repeat;
+}
+
+.button__hidden {
+  display: none;
+}
