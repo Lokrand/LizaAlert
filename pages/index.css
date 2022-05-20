@@ -16,6 +16,7 @@
 @import url(../blocks/checkbox/__label/checkbox__label.css);
 @import url(../blocks/checkbox/__label-success/checkbox__label-success.css);
 @import url(../blocks/checkbox/__label-correct/checkbox__label-correct.css);
+
 /* Окно результата  */
 @import url(../blocks/completed-course/completed-course.css);
 @import url(../blocks/completed-course/__title/completed-course__title.css);

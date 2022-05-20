@@ -7,7 +7,7 @@
 .checkbox__label-success::before {
   content: '';
   background: none;
-  background: url('/images/Vector.svg'), no-repeat;
+  background: url('../../../images/Vector.svg'), no-repeat;
   top: 2px;
   left: 2px;
   display: block;
