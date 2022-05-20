@@ -44,6 +44,10 @@
 @import url(../blocks/sidebar-content/__option/sidebar-content__option.css);
 @import url(../blocks/sidebar-content/__option/_active/sidebar-content__option_active.css);
 
+.hidden {
+  display: none;
+}
+
 .title {
   margin: 0;
   font: 700 40px/40px 'Golos', sans-serif;
