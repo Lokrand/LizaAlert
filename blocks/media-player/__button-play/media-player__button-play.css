@@ -1,0 +1,13 @@
+.media-player__button-play{
+  width: 24px;
+  height: 24px;
+  border-style: none;
+  background-color: #212329;
+  background-image: url('../../../images/Play.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: auto;
+  margin-bottom: auto;
+  cursor: pointer;
+  box-sizing: border-box;
+}
