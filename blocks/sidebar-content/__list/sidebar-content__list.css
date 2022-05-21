@@ -3,3 +3,7 @@
   padding-left: 0px;
   margin-bottom: 0;
 }
+
+.sidebar-content__list:hover {
+  cursor: pointer;
+}
