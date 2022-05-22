@@ -74,6 +74,7 @@
 @import url(../blocks/sidebar-content/__option-icon/sidebar-content__option-icon.css);
 @import url(../blocks/sidebar-content/__option/sidebar-content__option.css);
 @import url(../blocks/sidebar-content/__option/_active/sidebar-content__option_active.css);
+@import url(../blocks/sidebar-content/__link/sidebar-content__link.css);
 
 /* Кнопки Назад, Далее/Завершить*/
 @import url(../blocks/action-panel/action-panel.css);

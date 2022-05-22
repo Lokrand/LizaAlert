@@ -21,7 +21,9 @@ function ifCurrect() {
   let y = document.forms["testFirst"]["checkbox2"].checked;
   let z = document.forms["testFirst"]["checkbox3"].checked;
   for (let i = 0; i < document.forms["testSecond"].elements.length; i++) {
-    if ((x||y||z)&&document.forms["testSecond"].elements[i].checked) showResult()
+    if ((x||y||z)&&document.forms["testSecond"].elements[i].checked) {
+      showResult()
+    }
   }
 // Логика для верного ответа,т.е. если в первом тесте выбрано 2 любых или 3 варианта, а во 2-м тесте 2-й вариант, то как в макете стили.
   if (testButton.classList.contains('content__button_active')) {
@@ -117,15 +119,15 @@ const optionsDropDown = document.querySelectorAll(".sidebar-content__options");
 const optionsBox = document.querySelectorAll(".sidebar-content__options");
 const dropDownTriggerIcon = document.querySelectorAll(".sidebar-content__item-icon");
 const dropDownTriggerText = document.querySelectorAll('.sidebar-content__item');
-const optionsItem = document.querySelectorAll('.sidebar-content__option-wrapper')
+const optionsItem = document.querySelectorAll('.sidebar-content__link');
 
 //Открытие содержания при клике на иконку
 function openOptionsTriggerIcon(el) {
   const options = el.currentTarget.dataset.path;
   optionsBox.forEach(function () {
     const dropDown = document.querySelector(`[data-target=${options}]`);
-    dropDown.classList.toggle('sidebar-content__options_active')
-    el.target.classList.toggle('sidebar-content__item-icon_active')
+    dropDown.classList.toggle('sidebar-content__options_active');
+    el.target.classList.toggle('sidebar-content__item-icon_active');
   })
 }
 
@@ -135,7 +137,7 @@ dropDownTriggerIcon.forEach(function (item) {
 
 //Открытие содежания при клике на название темы
 function openOptionsTriggerText(el) {
-  const icon = el.target.nextElementSibling
+  const icon = el.target.nextElementSibling;
   const options = el.currentTarget.dataset.path;
   optionsBox.forEach(function () {
     const dropDown = document.querySelector(`[data-target=${options}]`);
@@ -163,45 +165,46 @@ const arrCoursesAll = [...optionsItem];
 let arrCoursesCompleted;
 
 
-arrCoursesAll.forEach(function(item) {
-
+arrCoursesAll.forEach(function (item) {
   const optionItemCurrent = item.closest('ul').dataset.target;
   let activeItem;
-
   if (item.lastElementChild.textContent === title.textContent && optionItemCurrent === course.dataset.path) {
     changeOptionColor(item);
     activeItem = arrCoursesAll.indexOf(item);
     arrCoursesCompleted = arrCoursesAll.slice(0, activeItem);
-   }
+  }
 
-return arrCoursesCompleted;
+  return arrCoursesCompleted;
 
 })
 
-//Смена иконок от начала содержания до текущего элемента
-arrCoursesCompleted.forEach(function(item){
-  changeIcon(item);
-})
 
 
 //Функция изменения цвета у текущей темы
 function changeOptionColor(el) {
-  const icon = el.childNodes[1].lastElementChild;
+  const icon = el.firstElementChild.childNodes[1];
   const optionText = el.childNodes[3]
   optionText.classList.add('sidebar-content__option_active');
   icon.style.fill = '#F06000';
 }
 
+arrCoursesCompleted.forEach(function (item) {
+  changeOptionColor(item)
+})
 
 //Функция смены иконки пройденной темы
 function changeIcon(el) {
   const icon = el.childNodes[1];
+  const optionText = el.childNodes[3]
   const iconNew = document.createElement('img')
   iconNew.src = "./images/icon-green.svg"
   iconNew.alt = "Иконка"
   icon.replaceWith(iconNew);
+  optionText.classList.remove('sidebar-content__option_active');
 }
 
-
-
+//Смена иконок от начала содержания до текущего элемента
+arrCoursesCompleted.forEach(function (item) {
+  changeIcon(item);
+})
 
