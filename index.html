@@ -33,6 +33,46 @@
             <!-- конец заготовки для секции об окончании курса -->
 
             <!-- тут заготовка для секции с результатами (её нужно встроить в секцию с тестом)
+            <div class="content__block">
+              <h1 class="content__title">Тест</h1>
+              <p class="content__condition">Посмотреть условия</p>
+            </div>
+            <h2 class="content__test-title">1. В каких случаях перспективно применение следовых кинологических расчётов?</h2>
+            <div class="test">
+              <form name="testFirst" onsubmit="return validateForm()" onclick="return ifCurrect()" method="post">
+                <div class="checkbox">
+                  <input type="checkbox" class="checkbox__input checkbox__input_success" id="checkbox_1" name="checkbox1">
+                  <label id="checkboxLabelFirst" for="checkbox_1" class="checkbox__label">Оказание помощи гражданам,
+                    оказавшимся в зонах бедствия или пропавшим в безлюдной местности</label>
+                </div>
+
+                <div class="checkbox">
+                  <input type="checkbox" class="checkbox__input" id="checkbox_2" name="checkbox2">
+                  <label id="checkboxLabelSecond" for="checkbox_2" class="checkbox__label">Обучение животного идти как по горячему,
+                    так и по остывшему следу</label>
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" class="checkbox__input" id="checkbox_3" name="checkbox3">
+                  <label id="checkboxLabelThird" for="checkbox_3" class="checkbox__label">Поиск тел и их остатков с применением
+                    специально обученных собак</label>
+                </div>
+              </form>
+            </div>
+            <h2 class="content__test-title">2. С какого возраста следует начинать дрессировку по курсу ПСС?</h2>
+            <form name="testSecond" onsubmit="return validateForm()" onclick="return ifCurrect()" method="post">
+              <div class="radio">
+                <input type="radio" name="answer" class="radio__input" id="radio_1" >
+                <label id="radioLabelFirst" for="radio_1" class="radio__label">6 месяцев</label>
+              </div>
+              <div class="radio">
+                <input type="radio" name="answer" class="radio__input" id="radio_2" >
+                <label id="radioLabelSecond" for="radio_2" class="radio__label">1–1,5 года</label>
+              </div>
+              <div class="radio">
+                <input type="radio" name="answer" class="radio__input" id="radio_3">
+                <label id="radioLabelThird" for="radio_3" class="radio__label">3 года</label>
+              </div>
+              <!-- тут заготовка для секции с результатами (её нужно встроить в секцию с тестом)
             в неё нужно будет вставить текст в зависимости от того, какой результат
             обратите внимание
             1. что если результат красный, то строку "Отличный результат" нужно удалять
@@ -48,10 +88,30 @@
             <!-- конец заготовки для секции о результатах теста -->
 
 
+            <section class="results" id="results">
+              <h2 class="results__title">83%</h2>
+              <p id="results_text_one" class="results__text">Отличный результат!</p>
+              <p id="results_text_two" class="results__text">Вы успешно завершили курс «Кинологическое направление».</p>
+              <p id="results_text_three" class="results__text">Нажите «Далее» чтобы продолжить. Если считаете, что сможете лучше,
+                нажмите «Пересдать». В случае если результат будет хуже, засчитается наивысший результат.</p>
+            </section>
+            <!-- конец заготовки для секции о результатах теста -->
+            </form>
+              <button type="submit" class="content__button" id="showResultButton">Показать результат</button>
+              <button type="submit" class="content__button button__hidden content__button_retake-success" id="retakeTestButton">Пересдать</button>
           </section>
+          <!-- тут заготовка для секции об окончании курса
+            в неё нужно будет подставить текст в зависимости от того, пройден курс или нет -->
+            <section class="completed-course hidden">
+              <h2 class="completed-course__title">Курс завершен</h2>
+              <h3 class="completed-course__subtitle">Поздравляем!</h3>
+              <p class="completed-course__text">Вы успешно завершили курс «Кинологическое направление».</p>
+              <p class="completed-course__text">Теперь вы можете участвовать в поисково-спасательных мероприятиях со своей собакой.</p>
+            </section>
+          <!-- конец заготовки для секции об окончании курса -->
           <div class="action-panel">
-            <button class="button">Назад</button>
-            <button class="button">Далее</button>
+            <button class="button">← Назад</button>
+            <button class="button">Далее →</button>
           </div>
         </div>
 
@@ -248,7 +308,7 @@
 
     </main>
   </div>
-<script src="./script/script.js"></script>
+  <script src="./script/script.js"></script>
 </body>
 
 </html>
