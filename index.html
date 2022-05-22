@@ -86,8 +86,8 @@
             </section>
           <!-- конец заготовки для секции об окончании курса -->
           <div class="action-panel">
-            <button class="button">← Назад</button>
-            <button class="button">Далее →</button>
+            <button type="button" aria-label="Назад" class="button button_returned"><img src="./images/arrow-left.svg" alt="Стрелка влево">Назад</button>
+            <button type="button" aria-label="Далее" class="button button_moved">Далее<img src="./images/arrow-right.svg" id="button__arrow_right" alt="Стрелка враво"></button>
           </div>
         </div>
         <aside class="sidebar-content">
@@ -282,5 +282,6 @@
     </main>
   </div>
   <script src="./script/script.js"></script>
+  <script src="./script/button.js"></script>
 </body>
 </html>

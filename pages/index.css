@@ -44,6 +44,13 @@
 @import url(../blocks/sidebar-content/__option/sidebar-content__option.css);
 @import url(../blocks/sidebar-content/__option/_active/sidebar-content__option_active.css);
 
+/* Кнопки Назад, Далее/Завершить*/
+@import url(../blocks/action-panel/action-panel.css);
+@import url(../blocks/button/button.css);
+@import url(../blocks/button/button_returned.css);
+@import url(../blocks/button/button_moved.css);
+@import url(../blocks/button/_moved_disabled/button_moved_disabled.css);
+
 .hidden {
   display: none;
 }
@@ -68,10 +75,6 @@
   text-align: center;
 }
 
-.button {
-  width: 184px;
-  height: 48px;
-}
 .sidebar {
   width: 424px;
   height: 1000px;

@@ -1,0 +1,6 @@
+.button_moved_disabled {
+  background-color: rgba(230, 231, 235, 1);
+  color: rgba(147, 151, 163, 1);
+  cursor: default;
+  border-color: rgba(230, 231, 235, 1);
+}

@@ -1,0 +1,7 @@
+.action-panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 24px;
+  margin-top: 24px;
+}
