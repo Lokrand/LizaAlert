@@ -1,0 +1,6 @@
+.media-player__sound-progress {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  cursor: pointer;
+}
