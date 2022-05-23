@@ -309,3 +309,98 @@
 .button__hidden {
   display: none;
 }
+
+
+
+
+/* владислав корнюшенко */
+
+.card{
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0px 0px 4px rgba(231, 232, 235, 0.6), 0px 4px 16px rgba(231, 232, 235, 0.6);
+  box-sizing: border-box;
+}
+
+.card__head{
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__header{
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+.card__link-button{
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  color: #212329;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.card__link-button:hover{
+  cursor: pointer;
+}
+
+.card__paragraph{
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  margin: 32px 0;
+}
+
+.card__two-col-info-block{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.card__info-block-row{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 16px 0;
+}
+.card__info-block-row:last-child{
+  margin: 0;
+}
+
+.card__row-name{
+  display: flex;
+}
+.card__row-icon{
+  background-image: url(../images/clock-icon.svg);
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin: 0 8px 0 0;
+}
+.card__row-text{
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.card__button{
+  background-color: #FF6600;
+  color: #fff;
+  border-radius: 16px;
+  padding: 12px 39px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  margin: 32px 0 0 0;
+  align-self: center;
+  border: 0;
+}
+
+.card__button:hover{
+  cursor: pointer;
+}
