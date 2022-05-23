@@ -3,6 +3,37 @@
 @import url(../blocks/page/page.css);
 
 /* Основной тест */
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__logo/header__logo.css);
+@import url(../blocks/header/__navigation/header__navigation.css);
+@import url(../blocks/header/__item/header__item.css);
+@import url(../blocks/header/__icon/header__icon.css);
+@import url(../blocks/header/__icon/_course/header__icon_course.css);
+@import url(../blocks/header/__icon/_profile/header__icon_profile.css);
+@import url(../blocks/header/__text/header__text.css);
+
+@import url(../blocks/breadcrumbs/breadcrumbs.css);
+@import url(../blocks/breadcrumbs/__items/breadcrumbs__items.css);
+@import url(../blocks/breadcrumbs/__item/breadcrumbs__item.css);
+@import url(../blocks/breadcrumbs/__link/breadcrumbs__link.css);
+@import url(../blocks/breadcrumbs/__link/_current/breadcrumbs__link_current.css);
+@import url(../blocks/breadcrumbs/__icon-next/breadcrumbs__icon-next.css);
+
+@import url(../blocks/media-player/media-player.css);
+@import url(../blocks/media-player/__control-bar/media-player__control-bar.css);
+@import url(../blocks/media-player/__button-play/media-player__button-play.css);
+@import url(../blocks/media-player/__timeline-bar/media-player__timeline-bar.css);
+@import url(../blocks/media-player/__timeline/media-player__timeline.css);
+@import url(../blocks/media-player/__sound/media-player__sound.css);
+@import url(../blocks/media-player/__sound-progress-bar/media-player__sound-progress-bar.css);
+@import url(../blocks/media-player/__sound-bar/media-player__sound-bar.css);
+@import url(../blocks/media-player/__sound-progress-bar/);
+@import url(../blocks/media-player/__button-progress/media-player__button-progress.css);
+@import url(../blocks/media-player/__button-progress/_mark/media-player__button-progress_mark.css);
+@import url(../blocks/media-player/__button-fullscreen/media-player__fullscreen.css);
+@import url(../blocks/media-player/__button-sound/media-player__button-sound.css);
+@import url(../blocks/media-player/__sound-progress/media-player__sound-progress.css);
+
 @import url(../blocks/content/content.css);
 @import url(../blocks/content/__block/content__block.css);
 @import url(../blocks/content/__button/_active/content__button_active.css);
@@ -44,6 +75,14 @@
 @import url(../blocks/sidebar-content/__option-icon/sidebar-content__option-icon.css);
 @import url(../blocks/sidebar-content/__option/sidebar-content__option.css);
 @import url(../blocks/sidebar-content/__option/_active/sidebar-content__option_active.css);
+@import url(../blocks/sidebar-content/__link/sidebar-content__link.css);
+
+/* Кнопки Назад, Далее/Завершить*/
+@import url(../blocks/action-panel/action-panel.css);
+@import url(../blocks/button/button.css);
+@import url(../blocks/button/button_returned.css);
+@import url(../blocks/button/button_moved.css);
+@import url(../blocks/button/_moved_disabled/button_moved_disabled.css);
 
 .hidden {
   display: none;
@@ -54,32 +93,15 @@
   font: 700 40px/40px 'Golos', sans-serif;
 }
 
-.header {
-  height: 72px;
-  width: 100%;
-  background-color: aqua;
-  text-align: center;
-}
-.breadcrumbs {
-  height: 80px;
-  font-size: 40px;
-  font: 700 40px/40px 'Golos', sans-serif;
-  width: 100%;
-  background-color: aquamarine;
-  text-align: center;
-}
 
 .button {
   width: 184px;
   height: 48px;
 }
-.sidebar {
-  width: 424px;
-  height: 1000px;
-
-}
+/* // TODO На  гриды! */
 .blocks {
   display: flex;
+
 }
 .submit {
   height: 20px;
@@ -287,4 +309,99 @@
 
 .button__hidden {
   display: none;
+}
+
+
+
+
+/* владислав корнюшенко */
+
+.card{
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0px 0px 4px rgba(231, 232, 235, 0.6), 0px 4px 16px rgba(231, 232, 235, 0.6);
+  box-sizing: border-box;
+}
+
+.card__head{
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__header{
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+.card__link-button{
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  color: #212329;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.card__link-button:hover{
+  cursor: pointer;
+}
+
+.card__paragraph{
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  margin: 32px 0;
+}
+
+.card__two-col-info-block{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.card__info-block-row{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 16px 0;
+}
+.card__info-block-row:last-child{
+  margin: 0;
+}
+
+.card__row-name{
+  display: flex;
+}
+.card__row-icon{
+  background-image: url(../images/clock-icon.svg);
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin: 0 8px 0 0;
+}
+.card__row-text{
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.card__button{
+  background-color: #FF6600;
+  color: #fff;
+  border-radius: 16px;
+  padding: 12px 39px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  margin: 32px 0 0 0;
+  align-self: center;
+  border: 0;
+}
+
+.card__button:hover{
+  cursor: pointer;
 }
