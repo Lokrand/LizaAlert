@@ -14,6 +14,7 @@ const radioLabelFirst = document.querySelector('#radioLabelFirst');
 const radioLabelSecond = document.querySelector('#radioLabelSecond');
 const radioLabelThird = document.querySelector('#radioLabelThird');
 const results = document.querySelector('#results');
+const num = 0;
 // Здесь я проверяю, если в 1-м и 2-м тесте выбран ответ, то загорается кнопка результата
 const showResult = () => testButton.classList.toggle('content__button_active');
 function ifCurrect() {
