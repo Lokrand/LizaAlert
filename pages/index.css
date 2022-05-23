@@ -173,7 +173,9 @@
 
 
 /* Для радио неверно выбранный ответ */
-/* .radio__label_wrong-answer {
+.radio__label_wrong-answer {
+  padding-left: 31px;
+  font: 400 18px/24px 'Golos', sans-serif;
   color: #FF0000;
 }
 
@@ -183,7 +185,13 @@
   height: 20px;
   top: 3px;
   border: none;
-} */
+  content: '';
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  z-index: 1;
+}
 
 .radio__label_currect-answer::before {
   border: none;
@@ -227,7 +235,7 @@
   border: none;
   width: 20px;
   height: 20px;
-  background: url('/images/Vector.svg'), no-repeat;
+  background: url('/images/icon-green.svg'), no-repeat;
   top: 2px;
   left: 2px;
   content: '';
@@ -239,14 +247,27 @@
 }
 
 /* Для радио - галочка */
-/* .radio__label_correct-answer::before {
+.radio__label_correct-answer {
+  padding-left: 31px;
+  font: 400 18px/24px 'Golos', sans-serif;
+}
+
+
+
+
+
+.radio__label_correct-answer::before {
   border: none;
   top: 6px;
   left: 3px;
   width: 15px;
   height: 12px;
   background: url('/images/FirstTestCorrectAnswer.svg'), no-repeat;
-} */
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 1;
+}
 
 /* .checkbox__input_success {
   width: 20px;

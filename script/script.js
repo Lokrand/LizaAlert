@@ -103,7 +103,9 @@ let resultTextThree = document.querySelector('#results_text_three');
 const setAnswerFirstBox = function () {
   checkboxLabelFirst.classList.add('checkbox__label-success')
   checkboxLabelFirst.classList.remove('checkbox__label')
-  //тут нужен класс, который поставит второму и третьему чекбоксу иконку галочки
+  checkboxLabelSecond.classList.add('checkbox__label-correct')
+  checkboxLabelThird.classList.add('checkbox__label-correct')
+  //тут нужен класс, который поставит второму и третьему чекбоксу иконку галочки +
 
 }
 
@@ -111,8 +113,10 @@ const setAnswerFirstBox = function () {
 const setAnswerSecondBox = function () {
   checkboxLabelSecond.classList.add('checkbox__label-success')
   checkboxLabelSecond.classList.remove('checkbox__label')
+  checkboxLabelFirst.classList.add('checkbox__label-correct')
+  checkboxLabelThird.classList.add('checkbox__label-correct')
 
-  //тут нужен класс, который поставит первому и третьему чекбоксу иконку галочки
+  //тут нужен класс, который поставит первому и третьему чекбоксу иконку галочки +
 
 }
 
@@ -120,8 +124,11 @@ const setAnswerSecondBox = function () {
 const setAnswerThirdBox = function () {
   checkboxLabelThird.classList.add('checkbox__label-success')
   checkboxLabelThird.classList.remove('checkbox__label')
-
-  //тут нужен класс, который поставит первому и второму чекбоксу иконку галочки
+  checkboxLabelFirst.classList.add('checkbox__label-correct')
+  checkboxLabelFirst.classList.remove('checkbox__label')
+  checkboxLabelSecond.classList.add('checkbox__label-correct')
+  checkboxLabelSecond.classList.remove('checkbox__label')
+  //тут нужен класс, который поставит первому и второму чекбоксу иконку галочки +
 
 }
 
@@ -131,7 +138,8 @@ const setAnswerFirstSecondBox = function () {
   checkboxLabelFirst.classList.remove('checkbox__label')
   checkboxLabelSecond.classList.add('checkbox__label-success')
   checkboxLabelSecond.classList.remove('checkbox__label')
-
+  checkboxLabelThird.classList.add('checkbox__label-correct')
+  checkboxLabelThird.classList.remove('checkbox__label')
   //тут нужен класс, который поставит третьему чекбоксу иконку галочки
 
 }
@@ -154,8 +162,8 @@ const setAnswerSecondThirdBox = function () {
   checkboxLabelSecond.classList.remove('checkbox__label')
   checkboxLabelThird.classList.add('checkbox__label-success')
   checkboxLabelThird.classList.remove('checkbox__label')
-
-  //тут нужен класс, который поставит первому чекбоксу иконку галочки
+  checkboxLabelFirst.classList.add('checkbox__label-correct')
+  //тут нужен класс, который поставит первому чекбоксу иконку галочки +
 
 }
 
@@ -163,46 +171,46 @@ const setAnswerSecondThirdBox = function () {
 
 //функция, которая меняет состояние радиокнопок при нажатии на первую
 const setAnswerFirstRadio = function () {
-  //тут нужен класс, который добавить красный крестик первой радиокнопке
-  // radioLabelFirst.classList.add('radio__label_answer-cross');
-  // radioLabelFirst.classList.remove('radio__label');
+  //тут нужен класс, который добавить красный крестик первой радиокнопке +
+  radioLabelFirst.classList.add('radio__label_wrong-answer');
+  radioLabelFirst.classList.remove('radio__label');
 
-  //тут нужен класс, который добавит галочку второй радиокнопке
-  // radioLabelSecond.classList.add('radio__label_success-answer');
-  // radioLabelSecond.classList.remove('radio__label');
+  //тут нужен класс, который добавит галочку второй радиокнопке +
+  radioLabelSecond.classList.add('radio__label_correct-answer');
+  radioLabelSecond.classList.remove('radio__label');
 
-  //тут нужен класс, который добавить обычный крестик третьей радиокнопке
-  // radioLabelThird.classList.add('radio__label_answer-cross');
-  // radioLabelThird.classList.remove('radio__label');
+  //тут нужен класс, который добавить обычный крестик третьей радиокнопке +
+  radioLabelThird.classList.add('radio__label_answer-cross');
+  radioLabelThird.classList.remove('radio__label');
 }
 
 //функция, которая меняет состояние радиокнопок при нажатии на вторую
 const setAnswerSecondRadio = function () {
-  //тут нужен класс, который добавить красный крестик первой радиокнопке
-  // radioLabelFirst.classList.add('radio__label_answer-cross');
-  // radioLabelFirst.classList.remove('radio__label');
+  //тут нужен класс, который добавить красный крестик первой радиокнопке +
+  radioLabelFirst.classList.add('radio__label_wrong-answer');
+  radioLabelFirst.classList.remove('radio__label');
 
   radioLabelSecond.classList.add('radio__label_success-answer');
   radioLabelSecond.classList.remove('radio__label');
 
-  //тут нужен класс, который добавить крестки третьей радиокнопке
-  // radioLabelThird.classList.add('radio__label_answer-cross');
-  // radioLabelThird.classList.remove('radio__label');
+  //тут нужен класс, который добавить крестки третьей радиокнопке +
+  radioLabelThird.classList.add('radio__label_answer-cross');
+  radioLabelThird.classList.remove('radio__label');
 }
 
 
 const setAnswerThirdRadio = function () {
-  //тут нужен класс, который добавить обычный крестик первой радиокнопке
-  // radioLabelFirst.classList.add('radio__label_answer-cross');
-  // radioLabelFirst.classList.remove('radio__label');
+  //тут нужен класс, который добавить обычный крестик первой радиокнопке +
+  radioLabelFirst.classList.add('radio__label_answer-cross');
+  radioLabelFirst.classList.remove('radio__label');
 
-  //тут нужен класс, который добавит галочку второй радиокнопке
-  // radioLabelSecond.classList.add('radio__label_success-answer');
-  // radioLabelSecond.classList.remove('radio__label');
+  //тут нужен класс, который добавит галочку второй радиокнопке +
+  radioLabelSecond.classList.add('radio__label_correct-answer');
+  radioLabelSecond.classList.remove('radio__label');
 
-  //тут нужен класс, который добавить красный крестик третьей радиокнопке
-  // radioLabelThird.classList.add('radio__label_answer-cross');
-  // radioLabelThird.classList.remove('radio__label');
+  //тут нужен класс, который добавить красный крестик третьей радиокнопке +
+  radioLabelThird.classList.add('radio__label_wrong-answer');
+  radioLabelThird.classList.remove('radio__label');
 }
 
 

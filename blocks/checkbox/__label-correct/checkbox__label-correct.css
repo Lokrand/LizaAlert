@@ -6,7 +6,7 @@
 .checkbox__label-correct::before {
   content: '';
   display: block;
-  background: url('../../..//images/FirstTestCorrectAnswer.svg'), no-repeat;
+  background: url('../../../images/FirstTestCorrectAnswer.svg'), no-repeat;
   top: 6px;
   left: 3px;
   width: 15px;
