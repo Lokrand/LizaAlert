@@ -203,13 +203,13 @@
 }
 
 /* Для радио ответ, который не выбран и не верный */
-.radio__label_answer-cross {
+.radio__label_cross-answer {
   padding-left: 31px;
   font: 400 18px/24px 'Golos', sans-serif;
 }
 
 
-.radio__label_answer-cross::before {
+.radio__label_cross-answer::before {
   border: none;
   top: 1px;
   left: 0px;
@@ -288,6 +288,7 @@
   padding-left: 48px;
   background-color: #F06000;
   color: #fff;
+  transition: opacity .2s linear;
 }
 
 .content__button_retake-wrong::before {
@@ -302,7 +303,14 @@
   z-index: 1;
   background: url('/images/testRetake.svg');
   background-repeat: no-repeat;
+
 }
+
+.content__button_retake-wrong:hover {
+  opacity: .6;
+}
+
+
 
 .content__button_retake-success {
   width: 176px;
