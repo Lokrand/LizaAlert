@@ -48,6 +48,14 @@
 @import url(../blocks/checkbox/__label-success/checkbox__label-success.css);
 @import url(../blocks/checkbox/__label-correct/checkbox__label-correct.css);
 
+@import url(../blocks/radio/radio.css);
+@import url(../blocks/radio/__input/radio__input.css);
+@import url(../blocks/radio/__label/radio__label.css);
+@import url(../blocks/radio/__label-correct-answer/radio__label-correct-answer.css);
+@import url(../blocks/radio/__label-cross-answer/radio__label-cross-answer.css);
+@import url(../blocks/radio/__label-success-answer/radio__label-success-answer.css);
+@import url(../blocks/radio/__label-wrong-answer/radio__label-wrong-answer.css);
+
 /* Окно результата  */
 @import url(../blocks/completed-course/completed-course.css);
 @import url(../blocks/completed-course/__title/completed-course__title.css);
@@ -117,169 +125,6 @@
   text-decoration: underline;
 }
 
-/* Тут начало стилей кнопок */
-
-.radio__input {
-  -webkit-appearance: none;
-  appearance: none;
-  position: absolute;
-}
-
-.radio {
-  position: relative;
-  margin-left: 33px;
-  margin-top: 16px;
-}
-
-.radio__label {
-  padding-left: 31px;
-  font: 400 18px/24px 'Golos', sans-serif;
-  cursor: pointer;
-  transition: color .05s linear;
-}
-
-.radio__label::before {
-  content: '';
-  display: block;
-  width: 18px;
-  height: 18px;
-  border: 2px solid #212329;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-.radio__label::after {
-  content: '';
-  display: block;
-  width: 12px;
-  height: 12px;
-  background-color: #F06000;
-  border-radius: 50%;
-  opacity: 0;
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  z-index: 2;
-
-  transition: opacity .05s linear;
-}
-.radio__input:checked + .radio__label::before {
-  border-color: #F06000;
-}
-
-.radio__input:checked + .radio__label::after {
-  opacity: 1;
-}
-.radio__input:checked + .radio__label {
-  color: #F06000;
-}
-
-
-/* Для радио неверно выбранный ответ */
-.radio__label_wrong-answer {
-  padding-left: 31px;
-  font: 400 18px/24px 'Golos', sans-serif;
-  color: #FF0000;
-}
-
-.radio__label_wrong-answer::before {
-  background: url('/images/TestSecondWrong.svg'), no-repeat;
-  width: 20px;
-  height: 20px;
-  top: 3px;
-  border: none;
-  content: '';
-  display: block;
-  position: absolute;
-  top: 2px;
-  left: 0;
-  z-index: 1;
-}
-
-.radio__label_currect-answer::before {
-  border: none;
-  top: 6px;
-  left: 3px;
-  width: 15px;
-  height: 12px;
-  background: url('/images/FirstTestCorrectAnswer.svg'), no-repeat;
-}
-
-/* Для радио ответ, который не выбран и не верный */
-.radio__label_cross-answer {
-  padding-left: 31px;
-  font: 400 18px/24px 'Golos', sans-serif;
-}
-
-
-.radio__label_cross-answer::before {
-  border: none;
-  top: 1px;
-  left: 0px;
-  height: 22px;
-  width: 22px;
-  background: url('/images/RadioLabelCross.svg'), no-repeat;
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-/* Для радио зелёный верный ответ */
-.radio__label_success-answer {
-  padding-left: 31px;
-  font: 400 18px/24px 'Golos', sans-serif;
-  color: green;
-}
-
-.radio__label_success-answer::before {
-  border: none;
-  width: 20px;
-  height: 20px;
-  background: url('/images/icon-green.svg'), no-repeat;
-  top: 2px;
-  left: 2px;
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-/* Для радио - галочка */
-.radio__label_correct-answer {
-  padding-left: 31px;
-  font: 400 18px/24px 'Golos', sans-serif;
-}
-
-
-
-
-
-.radio__label_correct-answer::before {
-  border: none;
-  top: 6px;
-  left: 3px;
-  width: 15px;
-  height: 12px;
-  background: url('/images/FirstTestCorrectAnswer.svg'), no-repeat;
-  content: '';
-  display: block;
-  position: absolute;
-  z-index: 1;
-}
-
-/* .checkbox__input_success {
-  width: 20px;
-  height: 20px;
-  background: url('/images/Vector.svg'), no-repeat;
-} */
 
 .test {
   margin: 0 32px;

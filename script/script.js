@@ -65,7 +65,7 @@ const highlightAnswer = (element, highlightType, inputType) => {
   if (inputType === 'radio') {
     const validTypes = ['success-answer', 'cross-answer', 'correct-answer', 'wrong-answer']
     if (validTypes.includes(highlightType)) {
-      const className = `radio__label_${highlightType}`
+      const className = `radio__label-${highlightType}`
       element.classList.add(className)
       element.classList.remove('radio__label')
     } else {
@@ -195,20 +195,20 @@ testRetake.addEventListener('click', function () {
   checkboxLabelThird.classList.remove('checkbox__label-success');
   checkboxLabelThird.classList.remove('checkbox__label-correct');
   checkboxLabelThird.classList.add('checkbox__label');
-  radioLabelFirst.classList.remove('radio__label_success-answer');
-  radioLabelFirst.classList.remove('radio__label_correct-answer')
-  radioLabelFirst.classList.remove('radio__label_cross-answer')
-  radioLabelFirst.classList.remove('radio__label_wrong-answer')
+  radioLabelFirst.classList.remove('radio__label-success-answer');
+  radioLabelFirst.classList.remove('radio__label-correct-answer')
+  radioLabelFirst.classList.remove('radio__label-cross-answer')
+  radioLabelFirst.classList.remove('radio__label-wrong-answer')
   radioLabelFirst.classList.add('radio__label');
-  radioLabelSecond.classList.remove('radio__label_success-answer');
-  radioLabelSecond.classList.remove('radio__label_correct-answer')
-  radioLabelSecond.classList.remove('radio__label_cross-answer')
-  radioLabelSecond.classList.remove('radio__label_wrong-answer')
+  radioLabelSecond.classList.remove('radio__label-success-answer');
+  radioLabelSecond.classList.remove('radio__label-correct-answer')
+  radioLabelSecond.classList.remove('radio__label-cross-answer')
+  radioLabelSecond.classList.remove('radio__label-wrong-answer')
   radioLabelSecond.classList.add('radio__label');
-  radioLabelThird.classList.remove('radio__label_success-answer');
-  radioLabelThird.classList.remove('radio__label_correct-answer');
-  radioLabelThird.classList.remove('radio__label_cross-answer');
-  radioLabelThird.classList.remove('radio__label_wrong-answer');
+  radioLabelThird.classList.remove('radio__label-success-answer');
+  radioLabelThird.classList.remove('radio__label-correct-answer');
+  radioLabelThird.classList.remove('radio__label-cross-answer');
+  radioLabelThird.classList.remove('radio__label-wrong-answer');
   radioLabelThird.classList.add('radio__label');
   document.forms["testFirst"].reset();
   document.forms["testSecond"].reset();
