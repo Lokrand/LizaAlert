@@ -177,7 +177,7 @@ function showResultTest() {
     results.classList.add('results__red');
     resultsTitle.textContent = '33%';
     resultTextOne.remove();
-    resultTextTwo.textContent = 'К сожалению, вы не набрали проходной балл';
+    resultTextTwo.textContent = 'К сожалению, вы не набрали проходной результат.';
     resultTextThree.textContent = 'Нажмите "Пересдать", чтобы попробовать снова';
     hideButton();
   }
