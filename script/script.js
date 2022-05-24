@@ -271,10 +271,8 @@ const course = document.querySelectorAll('.breadcrumbs__link');
 
 const arrCoursesAll = [...optionsItem];
 let arrCoursesCompleted;
-console.log(arrCoursesAll)
 
 arrCoursesAll.forEach(function (item) {
-  //console.log(item.textContent)
   const optionItemCurrent = item.closest('ul').dataset.target;
   let activeItem;
   if (item.lastElementChild.textContent === title[1].textContent && optionItemCurrent === course[2].dataset.path) {
