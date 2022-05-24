@@ -174,15 +174,26 @@
             в неё нужно будет подставить текст в зависимости от того, пройден курс или нет -->
             <section class="completed-course hidden" id="block-result">
               <h2 class="content__title">Курс завершен</h2>
-              <h3 class="completed-course__subtitle">Поздравляем!</h3>
-              <p class="completed-course__text">Вы успешно завершили курс «Кинологическое направление».</p>
-              <p class="completed-course__text">Теперь вы можете участвовать в поисково-спасательных мероприятиях со своей собакой.</p>
+              <h3 class="completed-course__subtitle">Сожалеем</h3>
+              <p id="completed-course_text_one" class="completed-course__text">
+                Курс
+                <span class="completed-course__text_span">
+                  «Кинологические направление»
+                </span>
+                не пройден</p>
+              <p id="completed-course_text_two" class="completed-course__text">Мы предъявляем очень строгие требования к участникам поисково-спасательных
+                мероприятий, из-за чего обучение может быть сложным.</p>
+              <p id="completed-course_text_three" class="completed-course__text">Вы можете попробовать себя
+                <span class="completed-course__text_span">
+                  в других направлениях.
+                </span>
+                </p>
             </section>
           <!------------------------------------------------------- Конец страницы №4 --------------------------------------------------------->
           <!------------------------------------------------------- Кнопки навигации ---------------------------------------------------------->
           <div class="action-panel">
-            <button type="button" aria-label="Назад" class="button button_returned"><img src="./images/arrow-left.svg" alt="Стрелка влево">Назад</button>
-            <button type="button" aria-label="Далее" class="button button_moved">Далее<img src="./images/arrow-right.svg" id="button__arrow_right" alt="Стрелка враво"></button>
+            <button id="button_back" type="button" aria-label="Назад" class="button button_returned"><img src="./images/arrow-left.svg" alt="Стрелка влево">Назад</button>
+            <button id="button_forward" type="button" aria-label="Далее" class="button button_moved">Далее<img src="./images/arrow-right.svg" id="button__arrow_right" alt="Стрелка враво"></button>
           </div>
         </div>
         <!------------------------------------------------------------ Sidebar ------------------------------------------------------------>

@@ -110,28 +110,28 @@ const checkAnswer = (given_answer, correct_answer) => {
 const validateAnswers = () => {
   const q1Answer = collectAnswers(document.forms["testFirst"])
   const q2Answer = collectAnswers(document.forms["testSecond"])
-  console.info('#q1 check');
+  // console.info('#q1 check');
   for (const [index, answer] of q1Answer.entries()) {
-    console.log(index, answer);
+    // console.log(index, answer);
     const response = checkAnswer(
       given_answer = answer,
       correct_answer = correctAswers['q1'][index],
     )
-    console.log(response);
+    // console.log(response);
     highlightAnswer(
       element = answerMapQ1[index],
       highlightType = `${response}`,
       inputType = 'checkbox',
     )
   }
-  console.info('#q2 check');
+  // console.info('#q2 check');
   for (const [index, answer] of q2Answer.entries()) {
-    console.log(index, answer);
+    // console.log(index, answer);
     const response = checkAnswer(
       given_answer = answer,
       correct_answer = correctAswers['q2'][index],
     )
-    console.log(response);
+    // console.log(response);
     highlightAnswer(
       element = answerMapQ2[index],
       highlightType = `${response}-answer`,
@@ -158,6 +158,7 @@ const showButton = function () {
   testButton.classList.remove('button__hidden');
   testRetake.classList.add('button__hidden');
 }
+
 function showResultTest() {
   let x = document.forms["testFirst"]["checkbox1"].checked;
   let y = document.forms["testFirst"]["checkbox2"].checked;
@@ -169,6 +170,7 @@ function showResultTest() {
     testRetake.classList.add('content__button_retake-success')
     testRetake.classList.remove('content__button_retake-wrong')
     testRetake.disabled = true;
+
   } else {
     testButton.classList.add('button__hidden');
     testRetake.classList.remove('button__hidden');
@@ -180,8 +182,55 @@ function showResultTest() {
     resultTextTwo.textContent = 'К сожалению, вы не набрали проходной балл';
     resultTextThree.textContent = 'Нажмите "Пересдать", чтобы попробовать снова';
     hideButton();
+
   }
+
 }
+
+
+//переменные с текстом окна завершения курса
+let completedCourseSection = document.querySelector('.completed-course');
+let completedCourseSubtitle = completedCourseSection.querySelector('.completed-course__subtitle');
+let completedCourseTextOne = completedCourseSection.querySelector('#completed-course_text_one');
+let completedCourseTextTwo = completedCourseSection.querySelector('#completed-course_text_two');
+let completedCourseTextThree = completedCourseSection.querySelector('#completed-course_text_three');
+//переменная с блоком основного контента
+let mainContentSection = document.querySelector('#block-main')
+
+//переменная с блоком основного контента
+let buttonForward = document.querySelector('#button_forward');
+
+//функция скрывающая сексии с результатами и основного контента и показывающее результирующее окно курса
+function hideResultsShowCompleted () {
+  results.classList.add('hidden');
+  mainContentSection.classList.add('hidden');
+  completedCourseSection.classList.remove('hidden');
+}
+
+//функция, которая меняет текст в сексии окна окончании курса при негативном результате
+function showPositiveTextCompletedResult () {
+  completedCourseSubtitle.textContent = 'Поздравляем!';
+  completedCourseTextOne.textContent = 'Вы успешно завершили курс «Кинологическое направление».';
+  completedCourseTextTwo.textContent = 'Теперь вы можете участвовать в поисково-спасательных мероприятиях со своей собакой.';
+}
+
+//показывает окно завершения курса
+buttonForward.addEventListener ('click', function () {
+  if (results.classList.contains('results__red')) {
+    hideResultsShowCompleted();
+  }
+  else if (results.classList.contains('results__green')) {
+    completedCourseTextThree.remove();
+    hideResultsShowCompleted();
+    showPositiveTextCompletedResult();
+  }
+  else (
+    console.log('Пройдите тест!')
+  )
+})
+
+
+
 testRetake.addEventListener('click', function () {
   testButton.classList.remove('content__button_active')
   results.classList.remove('results__green');
