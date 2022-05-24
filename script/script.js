@@ -293,25 +293,6 @@ arrCoursesAll.forEach(function (item) {
 
 })
 
-/*arrCoursesAll.forEach(function (item) {
-  const optionItemCurrent = item.closest('ul').dataset.target;
-  let activeItem;
-
-  if (item.lastElementChild.textContent === title[1].textContent && optionItemCurrent === course[2].dataset.path) {
-    changeOptionColor(item);
-    activeItem = arrCoursesAll.indexOf(item);
-    arrCoursesCompleted = arrCoursesAll.slice(0, activeItem);
-      }
-    else if (item.lastElementChild.classList.contains('completed-course__title') && optionItemCurrent === course[2].dataset.path) {
-    changeIcon(item)
-    activeItem = arrCoursesAll.indexOf(item);
-    arrCoursesCompleted = arrCoursesAll.slice(0, activeItem);
-  }
-
-  return arrCoursesCompleted;
-
-})*/
-
 
 //Функция изменения цвета у текущей темы
 function changeOptionColor(el) {
