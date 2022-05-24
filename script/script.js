@@ -259,8 +259,9 @@ dropDownTriggerText.forEach(function (item) {
 
 
 //Изменение иконок и цвета пунков меню
-const title = document.querySelector('.test'); //Здесь будет другой querySelector, в зависимости от вашей верстки
-const course = document.querySelector('.course'); //Здесь будет другой querySelector, в зависимости от вашей верстки
+const title = document.querySelectorAll('.content__title');
+const course = document.querySelectorAll('.breadcrumbs__link');
+
 
 
 // Преобразую NodeList в массив, ищу элемент, чей текст совпадает с текстом в основном блоке,
@@ -271,12 +272,16 @@ const course = document.querySelector('.course'); //Здесь будет дру
 const arrCoursesAll = [...optionsItem];
 let arrCoursesCompleted;
 
-
 arrCoursesAll.forEach(function (item) {
   const optionItemCurrent = item.closest('ul').dataset.target;
   let activeItem;
-  if (item.lastElementChild.textContent === title.textContent && optionItemCurrent === course.dataset.path) {
+  if (item.lastElementChild.textContent === title[1].textContent && optionItemCurrent === course[2].dataset.path) {
     changeOptionColor(item);
+    activeItem = arrCoursesAll.indexOf(item);
+    arrCoursesCompleted = arrCoursesAll.slice(0, activeItem);
+      }
+    else if (item.lastElementChild.classList.contains('completed-course__title') && optionItemCurrent === course[2].dataset.path) {
+    changeIcon(item)
     activeItem = arrCoursesAll.indexOf(item);
     arrCoursesCompleted = arrCoursesAll.slice(0, activeItem);
   }
@@ -284,7 +289,6 @@ arrCoursesAll.forEach(function (item) {
   return arrCoursesCompleted;
 
 })
-
 
 
 //Функция изменения цвета у текущей темы
