@@ -5,4 +5,5 @@
   text-decoration: none;
   gap: 10px;
   color: #212329;
+  align-items: flex-start;
 }
