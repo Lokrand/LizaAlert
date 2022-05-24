@@ -109,7 +109,13 @@
   margin-right: 10px;
 }
 
-
+.content__about-test {
+  font: 500 18px/24px 'Golos',sans-serif;
+  margin: 34px 32px 0 0;
+}
+.content__about-test:hover {
+  text-decoration: underline;
+}
 
 /* Тут начало стилей кнопок */
 

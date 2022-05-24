@@ -47,9 +47,72 @@
       </section>
       <div class="blocks">
         <div>
-          <section class="content">
+          <!------------------------------------------------- Начало страницы №1 С видео ---------------------------------------------------->
+          <div class="content hidden" id="block-video">
+            <h1 class="content__title">Видео</h1>
+              <div class="media-player">
+                <div class="media-player__control-bar">
+                  <button type="button" class="media-player__button-play" aria-label="Play"></button>
+                  <div class="media-player__timeline-bar">
+                    <img class="media-player__timeline" src="./images/progress-bar.svg">
+                    <button type="button" class="media-player__button-progress" aria-label="Время"></button>
+                  </div>
+                  <div class="media-player__sound">
+                    <button type="button" class="media-player__button-sound" aria-label="Sound"></button>
+                    <div class="media-player__sound-progress-bar">
+                      <button type="button" class="media-player__button-progress media-player__button-progress_mark" aria-label="Громкость"></button>
+                      <img class="media-player__sound-bar" src="./images/sound-bar.svg">
+                      <img class="media-player__sound-progress" src="./images/sound-progress.svg">
+                    </div>
+                  </div>
+                  <button type="button" class="media-player__button-fullscreen" aria-label="Во весь экран"></button>
+                </div>
+              </div>
+            </div>
+            <!------------------------------------------------- Конец страницы №1 С видео ---------------------------------------------------->
+          <!------------------------------------------------- Начало страницы №2 О тесте  ---------------------------------------------------->
+          <div class="hidden" id="block-about"> <!-- Класс card для показа -->
+            <div class="card__head">
+              <h2 class="card__header">Тест</h2>
+              <button class="card__link-button">Вернуться к тесту</button>
+            </div>
+
+            <p class="card__paragraph">Что мы узнали об особенностях привлечения следовых расчётов на ПСР и особенностях взаимодействия между участниками ППС</p>
+            <ul class="card__two-col-info-block">
+
+              <li class="card__info-block-row">
+                <div class="card__row-name">
+                  <div class="card__row-icon"></div>
+                  <p class="card__row-text">Проходной балл:</p>
+                </div>
+                <p class="card__row-text">80%</p>
+              </li>
+
+              <li class="card__info-block-row">
+                <div class="card__row-name">
+                  <div class="card__row-icon"></div>
+                  <p class="card__row-text">Количество попыток:</p>
+                </div>
+                <p class="card__row-text">3</p>
+              </li>
+
+              <li class="card__info-block-row">
+                <div class="card__row-name">
+                  <div class="card__row-icon"></div>
+                  <p class="card__row-text">Срок сдачи:</p>
+                </div>
+                <p class="card__row-text">22.02.2022 г. 16:20 (GMT+3)</p>
+              </li>
+
+            </ul>
+            <button class="card__button">Начать тест</button>
+          </div>
+          <!------------------------------------------------- Конец страницы №2 О тесте  ----------------------------------------------------------->
+          <!------------------------------------------------- Начало страницы №3 с main тестом  ---------------------------------------------------->
+          <section class="content" id="block-main">
           <div class="content__block">
               <h2 class="content__title">Тест</h2>
+              <p class="content__about-test" id="AboutTest">Посмотреть условия</p>
             </div>
             <h2 class="content__test-title">1. В каких случаях перспективно применение следовых кинологических расчётов?</h2>
             <div class="test">
@@ -105,78 +168,24 @@
               <button type="submit" class="content__button" id="showResultButton">Показать результат</button>
               <button type="submit" class="content__button button__hidden content__button_retake-success" id="retakeTestButton">Пересдать</button>
           </section>
+          <!------------------------------------------------------- Конец страницы №3 ---------------------------------------------------------->
+          <!------------------------------------------------------- Начало страницы №4 Курс завершён--------------------------------------------------------->
           <!-- тут заготовка для секции об окончании курса
             в неё нужно будет подставить текст в зависимости от того, пройден курс или нет -->
-            <section class="completed-course hidden">
-              <h2 class="completed-course__title">Курс завершен</h2>
+            <section class="completed-course hidden" id="block-result">
+              <h2 class="content__title">Курс завершен</h2>
               <h3 class="completed-course__subtitle">Поздравляем!</h3>
               <p class="completed-course__text">Вы успешно завершили курс «Кинологическое направление».</p>
               <p class="completed-course__text">Теперь вы можете участвовать в поисково-спасательных мероприятиях со своей собакой.</p>
             </section>
-
-            <div class="hidden"> <!-- Класс card для показа -->
-              <div class="card__head">
-                <h2 class="card__header">Тест</h2>
-                <button class="card__link-button">Вернуться к тесту</button>
-              </div>
-
-              <p class="card__paragraph">Что мы узнали об особенностях привлечения следовых расчётов на ПСР и особенностях взаимодействия между участниками ППС</p>
-              <ul class="card__two-col-info-block">
-
-                <li class="card__info-block-row">
-                  <div class="card__row-name">
-                    <div class="card__row-icon"></div>
-                    <p class="card__row-text">Проходной балл:</p>
-                  </div>
-                  <p class="card__row-text">80%</p>
-                </li>
-
-                <li class="card__info-block-row">
-                  <div class="card__row-name">
-                    <div class="card__row-icon"></div>
-                    <p class="card__row-text">Количество попыток:</p>
-                  </div>
-                  <p class="card__row-text">3</p>
-                </li>
-
-                <li class="card__info-block-row">
-                  <div class="card__row-name">
-                    <div class="card__row-icon"></div>
-                    <p class="card__row-text">Срок сдачи:</p>
-                  </div>
-                  <p class="card__row-text">22.02.2022 г. 16:20 (GMT+3)</p>
-                </li>
-
-              </ul>
-              <button class="card__button">Начать тест</button>
-            </div>
-          <!-- конец заготовки для секции об окончании курса -->
-          <div class="hidden">
-          <h1 class="content__title">Видео</h1>
-            <div class="media-player">
-              <div class="media-player__control-bar">
-                <button type="button" class="media-player__button-play" aria-label="Play"></button>
-                <div class="media-player__timeline-bar">
-                  <img class="media-player__timeline" src="./images/progress-bar.svg">
-                  <button type="button" class="media-player__button-progress" aria-label="Время"></button>
-                </div>
-                <div class="media-player__sound">
-                  <button type="button" class="media-player__button-sound" aria-label="Sound"></button>
-                  <div class="media-player__sound-progress-bar">
-                    <button type="button" class="media-player__button-progress media-player__button-progress_mark" aria-label="Громкость"></button>
-                    <img class="media-player__sound-bar" src="./images/sound-bar.svg">
-                    <img class="media-player__sound-progress" src="./images/sound-progress.svg">
-                  </div>
-                </div>
-                <button type="button" class="media-player__button-fullscreen" aria-label="Во весь экран"></button>
-              </div>
-            </div>
-          </div>
+          <!------------------------------------------------------- Конец страницы №4 --------------------------------------------------------->
+          <!------------------------------------------------------- Кнопки навигации ---------------------------------------------------------->
           <div class="action-panel">
             <button type="button" aria-label="Назад" class="button button_returned"><img src="./images/arrow-left.svg" alt="Стрелка влево">Назад</button>
             <button type="button" aria-label="Далее" class="button button_moved">Далее<img src="./images/arrow-right.svg" id="button__arrow_right" alt="Стрелка враво"></button>
           </div>
-          </div>
+        </div>
+        <!------------------------------------------------------------ Sidebar ------------------------------------------------------------>
         <aside class="sidebar-content">
           <div class="sidebar-content__container">
             <h2 class="sidebar-content__header">Содержание</h2>
@@ -461,7 +470,7 @@
             </li>
         </ul>
       </div>
-    </aside>
+        </aside>
     </div>
   </main>
 </div>
