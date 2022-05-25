@@ -14,139 +14,372 @@ const radioLabelFirst = document.querySelector('#radioLabelFirst');
 const radioLabelSecond = document.querySelector('#radioLabelSecond');
 const radioLabelThird = document.querySelector('#radioLabelThird');
 const results = document.querySelector('#results');
-// Здесь я проверяю, если в 1-м и 2-м тесте выбран ответ, то загорается кнопка результата
-const showResult = () => testButton.classList.toggle('content__button_active');
+
+testButton.addEventListener('click', () => { // TODO reaname testButton
+  if ((testCheck1.checked||testCheck2.checked||testCheck3.checked)&&(testRadio1.checked||testRadio2.checked||testRadio3.checked)) {
+    validateAnswers()
+    showResultTest()
+  }
+  // validateAnswers(q1Answer, q2Answer)
+})
+
+const showResult = () => {
+  testButton.classList.toggle('content__button_active');
+}
+
+correctAswers = {
+  q1 : [
+    1,
+    1,
+    1,
+  ],
+  q2 : [
+    0,
+    1,
+    0,
+  ]
+}
+
+const collectAnswers = (form) => {
+  const answerList = []
+
+  for (const [index, element] of Array.from(form).entries()) { // TODO remove [ index ] later
+    answerList.push(element.checked)
+  }
+  return answerList
+}
+
+const highlightAnswer = (element, highlightType, inputType) => {
+  // highlightType = correct / success / wrong / cross
+  //  check if highlightType have correct value
+  if (inputType === 'checkbox') {
+    const validTypes = ['success', 'correct']
+    if (validTypes.includes(highlightType)) {
+      const className = `checkbox__label-${highlightType}`
+      element.classList.add(className)
+      element.classList.remove('checkbox__label')
+    } else {
+      console.warn(`Wrong highlightType ${highlightType}`);
+    }
+  }
+  if (inputType === 'radio') {
+    const validTypes = ['success-answer', 'cross-answer', 'correct-answer', 'wrong-answer']
+    if (validTypes.includes(highlightType)) {
+      const className = `radio__label-${highlightType}`
+      element.classList.add(className)
+      element.classList.remove('radio__label')
+    } else {
+      console.warn(`Wrong highlightType ${highlightType}`);
+    }
+  }
+
+}
+answerMapQ1 = {
+  0 : checkboxLabelFirst,
+  1 : checkboxLabelSecond,
+  2 : checkboxLabelThird,
+}
+answerMapQ2 = {
+  0 : radioLabelFirst,
+  1 : radioLabelSecond,
+  2 : radioLabelThird,
+}
+
 function ifCurrect() {
+  const q1Answer = collectAnswers(document.forms["testFirst"])
+  const q2Answer = collectAnswers(document.forms["testSecond"])
+  for (let i = 0; i < document.forms["testSecond"].elements.length; i++) {
+    // check if both of forms have at least one answer
+    if ((q1Answer.some(x => x)) && document.forms["testSecond"].elements[i].checked) {
+      showResult()
+    }
+  }
+}
+
+const checkAnswer = (given_answer, correct_answer) => {
+  // correct success wrong cross
+  if (correct_answer) {
+    if (given_answer) return 'success'
+    else return 'correct'
+  } else if (!correct_answer) {
+    if (!given_answer) return 'cross'
+    else return 'wrong'
+  }
+}
+
+const validateAnswers = () => {
+  const q1Answer = collectAnswers(document.forms["testFirst"])
+  const q2Answer = collectAnswers(document.forms["testSecond"])
+  console.info('#q1 check');
+  for (const [index, answer] of q1Answer.entries()) {
+    console.log(index, answer);
+    const response = checkAnswer(
+      given_answer = answer,
+      correct_answer = correctAswers['q1'][index],
+    )
+    console.log(response);
+    highlightAnswer(
+      element = answerMapQ1[index],
+      highlightType = `${response}`,
+      inputType = 'checkbox',
+    )
+  }
+  console.info('#q2 check');
+  for (const [index, answer] of q2Answer.entries()) {
+    console.log(index, answer);
+    const response = checkAnswer(
+      given_answer = answer,
+      correct_answer = correctAswers['q2'][index],
+    )
+    console.log(response);
+    highlightAnswer(
+      element = answerMapQ2[index],
+      highlightType = `${response}-answer`,
+      inputType = 'radio',
+    )
+  }
+}
+//переменная с текстом % результата
+let resultsTitle = document.querySelector('.results__title');
+//переменная с первой строкой текста "Отличный результат!" в блоке с результатами
+let resultTextOne = document.querySelector('#results_text_one');
+//переменная со второй строкой текста в блоке с результатами
+let resultTextTwo = document.querySelector('#results_text_two');
+//переменная с третьей строкой текста в блоке с результатами
+let resultTextThree = document.querySelector('#results_text_three');
+
+// //функция, которая скрывает кнопку Проверить и открывает кнопку Пересдать
+const hideButton = function () {
+  testButton.classList.add('button__hidden');
+  testRetake.classList.remove('button__hidden');
+}
+
+const showButton = function () {
+  testButton.classList.remove('button__hidden');
+  testRetake.classList.add('button__hidden');
+}
+function showResultTest() {
   let x = document.forms["testFirst"]["checkbox1"].checked;
   let y = document.forms["testFirst"]["checkbox2"].checked;
   let z = document.forms["testFirst"]["checkbox3"].checked;
-  for (let i = 0; i < document.forms["testSecond"].elements.length; i++) {
-    if ((x||y||z)&&document.forms["testSecond"].elements[i].checked) showResult()
+  let rad2 = document.forms["testSecond"].elements[1].checked;
+  if (((x&&y&&z)||(x&&y)||(x&&z)||(y&&z))&&(rad2)) {
+    results.classList.add('results__green');
+    hideButton();
+    testRetake.classList.add('content__button_retake-success')
+    testRetake.classList.remove('content__button_retake-wrong')
+    testRetake.disabled = true;
+  } else {
+    testButton.classList.add('button__hidden');
+    testRetake.classList.remove('button__hidden');
+    testRetake.classList.remove('content__button_retake-success')
+    testRetake.classList.add('content__button_retake-wrong')
+    results.classList.add('results__red');
+    resultsTitle.textContent = '33%';
+    resultTextOne.remove();
+    resultTextTwo.textContent = 'К сожалению, вы не набрали проходной результат.';
+    resultTextThree.textContent = 'Нажмите "Пересдать", чтобы попробовать снова';
+    hideButton();
   }
-// Логика для верного ответа,т.е. если в первом тесте выбрано 2 любых или 3 варианта, а во 2-м тесте 2-й вариант, то как в макете стили.
-  if (testButton.classList.contains('content__button_active')) {
-      if (((x&&y)||(x&&z)||(y&&z)||(z&&y&&z))&&document.forms["testSecond"].elements[1].checked) {
-      testButton.addEventListener('click', () => {
-        testButton.classList.add('button__hidden');
-        testRetake.classList.remove('button__hidden');
-        radioLabelSecond.classList.add('radio__label_success-answer');
-        radioLabelSecond.classList.remove('radio__label');
-        radioLabelFirst.classList.add('radio__label_answer-cross');
-        radioLabelFirst.classList.remove('radio__label');
-        radioLabelThird.classList.add('radio__label_answer-cross');
-        radioLabelThird.classList.remove('radio__label');
-        results.classList.add('results__green');
-        if(x&&y&&z) {
-          checkboxLabelFirst.classList.add('checkbox__label-success')
-          checkboxLabelFirst.classList.remove('checkbox__label')
-          checkboxLabelSecond.classList.add('checkbox__label-success')
-          checkboxLabelSecond.classList.remove('checkbox__label')
-          checkboxLabelThird.classList.add('checkbox__label-success')
-          checkboxLabelThird.classList.remove('checkbox__label')
-        } else if (x&&z) {
-          checkboxLabelFirst.classList.add('checkbox__label-success')
-          checkboxLabelFirst.classList.remove('checkbox__label')
-          checkboxLabelThird.classList.add('checkbox__label-success')
-          checkboxLabelThird.classList.remove('checkbox__label')
-        } else if (y&&z) {
-          checkboxLabelSecond.classList.add('checkbox__label-success')
-          checkboxLabelSecond.classList.remove('checkbox__label')
-          checkboxLabelThird.classList.add('checkbox__label-success')
-          checkboxLabelThird.classList.remove('checkbox__label')
-        } else if (x&&y) {
-          checkboxLabelFirst.classList.add('checkbox__label-success')
-          checkboxLabelFirst.classList.remove('checkbox__label')
-          checkboxLabelSecond.classList.add('checkbox__label-success')
-          checkboxLabelSecond.classList.remove('checkbox__label')
-        }
-        if (!x) {
-          checkboxLabelFirst.classList.add('checkbox__label-correct')
-          checkboxLabelFirst.classList.remove('checkbox__label')
-        } else if (!y) {
-          checkboxLabelSecond.classList.add('checkbox__label-correct')
-          checkboxLabelSecond.classList.remove('checkbox__label')
-        } else if (!z) {
-          checkboxLabelThird.classList.add('checkbox__label-correct')
-          checkboxLabelThird.classList.remove('checkbox__label')
-        }
-      })
-    }
-  }
-  //конец логики верного ответа
 }
-
-
-// let form = document.forms.testFirst;
-// let check1 = form.elements.checkbox1;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+testRetake.addEventListener('click', function () {
+  testButton.classList.remove('content__button_active')
+  results.classList.remove('results__green');
+  results.classList.remove('results__red');
+  checkboxLabelFirst.classList.remove('checkbox__label-success');
+  checkboxLabelFirst.classList.remove('checkbox__label-correct');
+  checkboxLabelFirst.classList.add('checkbox__label');
+  checkboxLabelSecond.classList.remove('checkbox__label-success');
+  checkboxLabelSecond.classList.remove('checkbox__label-correct');
+  checkboxLabelSecond.classList.add('checkbox__label');
+  checkboxLabelThird.classList.remove('checkbox__label-success');
+  checkboxLabelThird.classList.remove('checkbox__label-correct');
+  checkboxLabelThird.classList.add('checkbox__label');
+  radioLabelFirst.classList.remove('radio__label-success-answer');
+  radioLabelFirst.classList.remove('radio__label-correct-answer')
+  radioLabelFirst.classList.remove('radio__label-cross-answer')
+  radioLabelFirst.classList.remove('radio__label-wrong-answer')
+  radioLabelFirst.classList.add('radio__label');
+  radioLabelSecond.classList.remove('radio__label-success-answer');
+  radioLabelSecond.classList.remove('radio__label-correct-answer')
+  radioLabelSecond.classList.remove('radio__label-cross-answer')
+  radioLabelSecond.classList.remove('radio__label-wrong-answer')
+  radioLabelSecond.classList.add('radio__label');
+  radioLabelThird.classList.remove('radio__label-success-answer');
+  radioLabelThird.classList.remove('radio__label-correct-answer');
+  radioLabelThird.classList.remove('radio__label-cross-answer');
+  radioLabelThird.classList.remove('radio__label-wrong-answer');
+  radioLabelThird.classList.add('radio__label');
+  document.forms["testFirst"].reset();
+  document.forms["testSecond"].reset();
+  showButton();
+})
 
 
 
 
 
 // SideBar //
+
 const iconDropDown = document.querySelectorAll(".sidebar-content__item-icon");
 const optionsDropDown = document.querySelectorAll(".sidebar-content__options");
+const optionsBox = document.querySelectorAll(".sidebar-content__options");
+const dropDownTriggerIcon = document.querySelectorAll(".sidebar-content__item-icon");
+const dropDownTriggerText = document.querySelectorAll('.sidebar-content__item');
+const optionsItem = document.querySelectorAll('.sidebar-content__link');
 
-let intervalId
-
-function openContentOptions (e) {
-
-  const options = e.currentTarget.dataset.path;
-
-  optionsDropDown.forEach(function () {
+//Открытие содержания при клике на иконку
+function openOptionsTriggerIcon(el) {
+  const options = el.currentTarget.dataset.path;
+  optionsBox.forEach(function () {
     const dropDown = document.querySelector(`[data-target=${options}]`);
-    if (!dropDown.classList.contains('open')) {
-      dropDown.classList.add('sidebar-content__options_active')
-      e.target.classList.add('sidebar-content__item-icon_active')
-      intervalId = setTimeout(() => {
-        dropDown.classList.add('open')
-      }, 0)
-
-    }
-
-    if (dropDown.classList.contains('open')) {
-      clearInterval(intervalId)
-      dropDown.classList.remove('sidebar-content__options_active')
-      e.target.classList.remove('sidebar-content__item-icon_active')
-      intervalId = setTimeout(() => {
-        dropDown.classList.remove('open')
-      }, 0)
-    }
-
-  });
-
+    dropDown.classList.toggle('sidebar-content__options_active');
+    el.target.classList.toggle('sidebar-content__item-icon_active');
+  })
 }
 
-iconDropDown.forEach(function (item) {
-item.addEventListener('click', openContentOptions)
+dropDownTriggerIcon.forEach(function (item) {
+  item.addEventListener('click', openOptionsTriggerIcon)
+})
+
+//Открытие содежания при клике на название темы
+function openOptionsTriggerText(el) {
+  const icon = el.target.nextElementSibling;
+  const options = el.currentTarget.dataset.path;
+  optionsBox.forEach(function () {
+    const dropDown = document.querySelector(`[data-target=${options}]`);
+    icon.classList.toggle('sidebar-content__item-icon_active');
+    dropDown.classList.toggle('sidebar-content__options_active');
+  })
+}
+
+dropDownTriggerText.forEach(function (item) {
+  item.addEventListener('click', openOptionsTriggerText)
 })
 
 
+//Изменение иконок и цвета пунков меню
+const title = document.querySelectorAll('.content__title');
+const course = document.querySelectorAll('.breadcrumbs__link');
+
+
+
+// Преобразую NodeList в массив, ищу элемент, чей текст совпадает с текстом в основном блоке,
+//меняю его цвет и создаю новый массив от начала до этого элемента
+//Немного иная логика будет для блоков "Курс завершён», т.к там название блока не совпадает с пунком содержания,
+// но я не стала ее описывать, пока нет конечной верстки
+
+const arrCoursesAll = [...optionsItem];
+let arrCoursesCompleted;
+
+arrCoursesAll.forEach(function (item) {
+  const optionItemCurrent = item.closest('ul').dataset.target;
+  let activeItem;
+  if (item.lastElementChild.textContent === title[1].textContent && optionItemCurrent === course[2].dataset.path) {
+    changeOptionColor(item);
+    activeItem = arrCoursesAll.indexOf(item);
+    arrCoursesCompleted = arrCoursesAll.slice(0, activeItem);
+      }
+    else if (item.lastElementChild.classList.contains('completed-course__title') && optionItemCurrent === course[2].dataset.path) {
+    changeIcon(item)
+    activeItem = arrCoursesAll.indexOf(item);
+    arrCoursesCompleted = arrCoursesAll.slice(0, activeItem);
+  }
+
+  return arrCoursesCompleted;
+
+})
+
+
+//Функция изменения цвета у текущей темы
+function changeOptionColor(el) {
+  const icon = el.firstElementChild.childNodes[1];
+  const optionText = el.childNodes[3]
+  optionText.classList.add('sidebar-content__option_active');
+  icon.style.fill = '#F06000';
+}
+/*
+arrCoursesCompleted.forEach(function (item) {
+  changeOptionColor(item)
+})
+*/
+
+//Функция смены иконки пройденной темы
+function changeIcon(el) {
+  const icon = el.childNodes[1];
+  const optionText = el.childNodes[3]
+  const iconNew = document.createElement('img')
+  iconNew.src = "./images/icon-green.svg"
+  iconNew.alt = "Иконка"
+  icon.replaceWith(iconNew);
+  optionText.classList.remove('sidebar-content__option_active');
+}
+
+/*
+//Смена иконок от начала содержания до текущего элемента
+arrCoursesCompleted.forEach(function (item) {
+  changeIcon(item);
+})
+*/
+
+
+
+// Логика для страницы №2 о тесте
+// блок "о тесте"
+const aboutTest = document.getElementById('block-about');
+// кнопка "начать тест" в блоке "о тесте"
+const cardButton = aboutTest.querySelector('.card__button');
+// блок "тест"
+const testBlock = document.getElementById('block-main');
+// кнопка "вернуться к тесту" в блоке "о тесте"
+const buttonReturnToTheTest = aboutTest.querySelector('.card__link-button');
+// закрыть блок "о тесте"
+function closeAboutTest(){
+  aboutTest.classList.remove('card');
+  aboutTest.classList.add('hidden');
+}
+// открыть блок "тест"
+function openTest(){
+  testBlock.classList.remove('hidden');
+}
+// слушатель кнопки "начать тест" в блоке "о тесте"
+cardButton.addEventListener('click', startTest);
+// ф-я при нажатии на кнопку "начать тест" в блоке "о тесте"
+function startTest(){
+  // закрыть о тесте
+  closeAboutTest();
+  // открыть тест
+  openTest();
+}
+
+// Логика для страницы "О тесте (посмотреть результаты)"
+// открыть блок "о тесте"
+function openAboutTest(){
+  aboutTest.classList.add('card');
+  aboutTest.classList.remove('hidden');
+}
+// погасить кнопку "начать тест" в блоке "о тесте"
+function hideStartTestButton(){
+  cardButton.classList.add('hidden');
+}
+// активировать кнопку-ссылку "вернуться к тесту"
+
+function returnToTheTest(){
+  buttonReturnToTheTest.classList.remove('hidden');
+}
+
+/*
+ВНИМАНИЕ!!!
+функцию showTheClause() нужно повесить обработчику событий
+для ссылки/кнопки "посмотреть условия". Она откроет блок "о тесте"
+с погашенной кнопкой "начать тест" и с активной кнопкой "вернуться к тесту"
+*/
+// посмотреть условия
+function showTheClause(){
+  // открыть блок "о тесте"
+  openAboutTest();
+  // погасить кнопку "начать тест" в блоке "о тесте"
+  hideStartTestButton();
+  // активировать кнопку-ссылку "вернуться к тесту"
+  returnToTheTest();
+}

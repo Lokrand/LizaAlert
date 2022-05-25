@@ -3,6 +3,37 @@
 @import url(../blocks/page/page.css);
 
 /* Основной тест */
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__logo/header__logo.css);
+@import url(../blocks/header/__navigation/header__navigation.css);
+@import url(../blocks/header/__item/header__item.css);
+@import url(../blocks/header/__icon/header__icon.css);
+@import url(../blocks/header/__icon/_course/header__icon_course.css);
+@import url(../blocks/header/__icon/_profile/header__icon_profile.css);
+@import url(../blocks/header/__text/header__text.css);
+
+@import url(../blocks/breadcrumbs/breadcrumbs.css);
+@import url(../blocks/breadcrumbs/__items/breadcrumbs__items.css);
+@import url(../blocks/breadcrumbs/__item/breadcrumbs__item.css);
+@import url(../blocks/breadcrumbs/__link/breadcrumbs__link.css);
+@import url(../blocks/breadcrumbs/__link/_current/breadcrumbs__link_current.css);
+@import url(../blocks/breadcrumbs/__icon-next/breadcrumbs__icon-next.css);
+
+@import url(../blocks/media-player/media-player.css);
+@import url(../blocks/media-player/__control-bar/media-player__control-bar.css);
+@import url(../blocks/media-player/__button-play/media-player__button-play.css);
+@import url(../blocks/media-player/__timeline-bar/media-player__timeline-bar.css);
+@import url(../blocks/media-player/__timeline/media-player__timeline.css);
+@import url(../blocks/media-player/__sound/media-player__sound.css);
+@import url(../blocks/media-player/__sound-progress-bar/media-player__sound-progress-bar.css);
+@import url(../blocks/media-player/__sound-bar/media-player__sound-bar.css);
+@import url(../blocks/media-player/__sound-progress-bar/);
+@import url(../blocks/media-player/__button-progress/media-player__button-progress.css);
+@import url(../blocks/media-player/__button-progress/_mark/media-player__button-progress_mark.css);
+@import url(../blocks/media-player/__button-fullscreen/media-player__fullscreen.css);
+@import url(../blocks/media-player/__button-sound/media-player__button-sound.css);
+@import url(../blocks/media-player/__sound-progress/media-player__sound-progress.css);
+
 @import url(../blocks/content/content.css);
 @import url(../blocks/content/__block/content__block.css);
 @import url(../blocks/content/__button/_active/content__button_active.css);
@@ -16,6 +47,15 @@
 @import url(../blocks/checkbox/__label/checkbox__label.css);
 @import url(../blocks/checkbox/__label-success/checkbox__label-success.css);
 @import url(../blocks/checkbox/__label-correct/checkbox__label-correct.css);
+
+@import url(../blocks/radio/radio.css);
+@import url(../blocks/radio/__input/radio__input.css);
+@import url(../blocks/radio/__label/radio__label.css);
+@import url(../blocks/radio/__label-correct-answer/radio__label-correct-answer.css);
+@import url(../blocks/radio/__label-cross-answer/radio__label-cross-answer.css);
+@import url(../blocks/radio/__label-success-answer/radio__label-success-answer.css);
+@import url(../blocks/radio/__label-wrong-answer/radio__label-wrong-answer.css);
+
 /* Окно результата  */
 @import url(../blocks/completed-course/completed-course.css);
 @import url(../blocks/completed-course/__title/completed-course__title.css);
@@ -43,6 +83,14 @@
 @import url(../blocks/sidebar-content/__option-icon/sidebar-content__option-icon.css);
 @import url(../blocks/sidebar-content/__option/sidebar-content__option.css);
 @import url(../blocks/sidebar-content/__option/_active/sidebar-content__option_active.css);
+@import url(../blocks/sidebar-content/__link/sidebar-content__link.css);
+
+/* Кнопки Назад, Далее/Завершить*/
+@import url(../blocks/action-panel/action-panel.css);
+@import url(../blocks/button/button.css);
+@import url(../blocks/button/button_returned.css);
+@import url(../blocks/button/button_moved.css);
+@import url(../blocks/button/_moved_disabled/button_moved_disabled.css);
 
 .hidden {
   display: none;
@@ -53,37 +101,94 @@
   font: 700 40px/40px 'Golos', sans-serif;
 }
 
-.header {
-  height: 72px;
-  width: 100%;
-  background-color: aqua;
-  text-align: center;
-}
-.breadcrumbs {
-  height: 80px;
-  font-size: 40px;
-  font: 700 40px/40px 'Golos', sans-serif;
-  width: 100%;
-  background-color: aquamarine;
-  text-align: center;
-}
 
 .button {
   width: 184px;
   height: 48px;
 }
-.sidebar {
-  width: 424px;
-  height: 1000px;
-
-}
+/* // TODO На  гриды! */
 .blocks {
   display: flex;
+
 }
 .submit {
   height: 20px;
   width: 20px;
   margin-right: 10px;
+}
+
+.content__about-test {
+  font: 500 18px/24px 'Golos',sans-serif;
+  margin: 34px 32px 0 0;
+}
+.content__about-test:hover {
+  text-decoration: underline;
+}
+
+
+.test {
+  margin: 0 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #E6E7EB;
+}
+
+.content__button_retake-wrong {
+  width: 176px;
+  height: 48px;
+  margin-left: 348px;
+  padding-left: 48px;
+  background-color: #F06000;
+  color: #fff;
+  transition: opacity .2s linear;
+}
+
+.content__button_retake-wrong::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+  background: url('/images/testRetake.svg');
+  background-repeat: no-repeat;
+
+}
+
+.content__button_retake-wrong:hover {
+  opacity: .6;
+}
+
+
+
+.content__button_retake-success {
+  width: 176px;
+  height: 48px;
+  margin-left: 348px;
+  padding-left: 48px;
+  background-color: white;
+  color: #F06000;
+  border: 1.2px solid #E6E7EB;
+}
+
+.content__button_retake-success::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+  background: url('/images/TestRetakeOrange.svg');
+  background-repeat: no-repeat;
+}
+
+.button__hidden {
+  display: none;
 }
 
 
@@ -94,6 +199,7 @@
 .card{
   display: flex;
   flex-direction: column;
+  width: 872px;
   padding: 32px;
   background-color: #fff;
   border-radius: 16px;
@@ -151,7 +257,6 @@
   display: flex;
 }
 .card__row-icon{
-  background-image: url(../images/clock-icon.svg);
   width: 24px;
   height: 24px;
   background-repeat: no-repeat;
@@ -159,11 +264,25 @@
   background-position: center;
   margin: 0 8px 0 0;
 }
+
+.row-icon_img_checked{
+  background-image: url(../images/checked-icon.svg);
+}
+.row-icon_img_refresh{
+  background-image: url(../images/refresh-icon.svg);
+}
+.row-icon_img_clock{
+  background-image: url(../images/clock-icon.svg);
+}
+
+
 .card__row-text{
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
 }
+
+
 .card__button{
   background-color: #FF6600;
   color: #fff;
@@ -179,204 +298,4 @@
 
 .card__button:hover{
   cursor: pointer;
-}
-
-/* Тут начало стилей кнопок */
-
-.radio__input {
-  -webkit-appearance: none;
-  appearance: none;
-  position: absolute;
-}
-
-.radio {
-  position: relative;
-  margin-left: 33px;
-  margin-top: 16px;
-}
-
-.radio__label {
-  padding-left: 31px;
-  font: 400 18px/24px 'Golos', sans-serif;
-  cursor: pointer;
-  transition: color .05s linear;
-}
-
-.radio__label::before {
-  content: '';
-  display: block;
-  width: 18px;
-  height: 18px;
-  border: 2px solid #212329;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-.radio__label::after {
-  content: '';
-  display: block;
-  width: 12px;
-  height: 12px;
-  background-color: #F06000;
-  border-radius: 50%;
-  opacity: 0;
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  z-index: 2;
-
-  transition: opacity .05s linear;
-}
-.radio__input:checked + .radio__label::before {
-  border-color: #F06000;
-}
-
-.radio__input:checked + .radio__label::after {
-  opacity: 1;
-}
-.radio__input:checked + .radio__label {
-  color: #F06000;
-}
-
-
-/* Для радио неверно выбранный ответ */
-/* .radio__label_wrong-answer {
-  color: #FF0000;
-}
-
-.radio__label_wrong-answer::before {
-  background: url('/images/TestSecondWrong.svg'), no-repeat;
-  width: 20px;
-  height: 20px;
-  top: 3px;
-  border: none;
-} */
-
-.radio__label_currect-answer::before {
-  border: none;
-  top: 6px;
-  left: 3px;
-  width: 15px;
-  height: 12px;
-  background: url('/images/FirstTestCorrectAnswer.svg'), no-repeat;
-}
-
-/* Для радио ответ, который не выбран и не верный */
-.radio__label_answer-cross {
-  padding-left: 31px;
-  font: 400 18px/24px 'Golos', sans-serif;
-}
-
-
-.radio__label_answer-cross::before {
-  border: none;
-  top: 1px;
-  left: 0px;
-  height: 22px;
-  width: 22px;
-  background: url('/images/RadioLabelCross.svg'), no-repeat;
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-/* Для радио зелёный верный ответ */
-.radio__label_success-answer {
-  padding-left: 31px;
-  font: 400 18px/24px 'Golos', sans-serif;
-  color: green;
-}
-
-.radio__label_success-answer::before {
-  border: none;
-  width: 20px;
-  height: 20px;
-  background: url('/images/Vector.svg'), no-repeat;
-  top: 2px;
-  left: 2px;
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-/* Для радио - галочка */
-/* .radio__label_correct-answer::before {
-  border: none;
-  top: 6px;
-  left: 3px;
-  width: 15px;
-  height: 12px;
-  background: url('/images/FirstTestCorrectAnswer.svg'), no-repeat;
-} */
-
-/* .checkbox__input_success {
-  width: 20px;
-  height: 20px;
-  background: url('/images/Vector.svg'), no-repeat;
-} */
-
-.test {
-  margin: 0 32px;
-  padding-bottom: 32px;
-  border-bottom: 1px solid #E6E7EB;
-}
-
-.content__button_retake-wrong {
-  width: 176px;
-  height: 48px;
-  margin-left: 348px;
-  padding-left: 48px;
-  background-color: #F06000;
-  color: #fff;
-}
-
-.content__button_retake-wrong::before {
-  content: '';
-  display: block;
-  width: 24px;
-  height: 24px;
-  margin-left: 10px;
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  z-index: 1;
-  background: url('/images/testRetake.svg');
-  background-repeat: no-repeat;
-}
-
-.content__button_retake-success {
-  width: 176px;
-  height: 48px;
-  margin-left: 348px;
-  padding-left: 48px;
-  background-color: white;
-  color: #F06000;
-  border: 1.2px solid #E6E7EB;
-}
-
-.content__button_retake-success::before {
-  content: '';
-  display: block;
-  width: 24px;
-  height: 24px;
-  margin-left: 10px;
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  z-index: 1;
-  background: url('/images/TestRetakeOrange.svg');
-  background-repeat: no-repeat;
-}
-
-.button__hidden {
-  display: none;
 }

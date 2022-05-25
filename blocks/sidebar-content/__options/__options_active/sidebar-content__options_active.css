@@ -1,3 +1,5 @@
 .sidebar-content__options_active {
-  display: block;
+  max-height: 100vh;
+  opacity: 1;
+  transition: min-height 0.2s;
 }
