@@ -71,7 +71,7 @@
             </div>
             <!------------------------------------------------- Конец страницы №1 С видео ---------------------------------------------------->
           <!------------------------------------------------- Начало страницы №2 О тесте  ---------------------------------------------------->
-          <div class="card" id="block-about"> <!-- Класс card для показа -->
+          <div class="hidden" id="block-about"> <!-- Класс card для показа -->
             <div class="card__head">
               <h2 class="card__header">Тест</h2>
               <button class="card__link-button hidden">Вернуться к тесту</button>
@@ -172,19 +172,21 @@
           <!------------------------------------------------------- Начало страницы №4 Курс завершён--------------------------------------------------------->
           <!-- тут заготовка для секции об окончании курса
             в неё нужно будет подставить текст в зависимости от того, пройден курс или нет -->
-            <section class="completed-course hidden" id="block-result">
+            <section class="content" id="block-result">  <!-- completed-course -->
+              <div class="content__block">
               <h2 class="content__title">Курс завершен</h2>
+            </div>
               <h3 class="completed-course__subtitle">Сожалеем</h3>
               <p id="completed-course_text_one" class="completed-course__text">
                 Курс
-                <span class="completed-course__text_span">
-                  «Кинологические направление»
+                <span class="completed-course__text-span">
+                  «Кинологическое направление»
                 </span>
-                не пройден</p>
+                не пройден.</p>
               <p id="completed-course_text_two" class="completed-course__text">Мы предъявляем очень строгие требования к участникам поисково-спасательных
                 мероприятий, из-за чего обучение может быть сложным.</p>
               <p id="completed-course_text_three" class="completed-course__text">Вы можете попробовать себя
-                <span class="completed-course__text_span">
+                <span class="completed-course__text-span">
                   в других направлениях.
                 </span>
                 </p>
