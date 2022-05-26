@@ -219,11 +219,13 @@ function showPositiveTextCompletedResult () {
 buttonForward.addEventListener ('click', function () {
   if (results.classList.contains('results__red')) {
     hideResultsShowCompleted();
+    updateBreadCrumps();
   }
   else if (results.classList.contains('results__green')) {
     completedCourseTextThree.remove();
     hideResultsShowCompleted();
     showPositiveTextCompletedResult();
+    updateBreadCrumps();
   }
   else (
     console.log('Пройдите тест!')
