@@ -158,7 +158,6 @@ const showButton = function () {
   testButton.classList.remove('button__hidden');
   testRetake.classList.add('button__hidden');
 }
-
 function showResultTest() {
   let x = document.forms["testFirst"]["checkbox1"].checked;
   let y = document.forms["testFirst"]["checkbox2"].checked;
@@ -170,7 +169,6 @@ function showResultTest() {
     testRetake.classList.add('content__button_retake-success')
     testRetake.classList.remove('content__button_retake-wrong')
     testRetake.disabled = true;
-
   } else {
     testButton.classList.add('button__hidden');
     testRetake.classList.remove('button__hidden');
@@ -368,7 +366,71 @@ function changeIcon(el) {
   optionText.classList.remove('sidebar-content__option_active');
 }
 
+/*
 //Смена иконок от начала содержания до текущего элемента
 arrCoursesCompleted.forEach(function (item) {
   changeIcon(item);
 })
+*/
+
+
+
+// Логика для страницы №2 о тесте
+// блок "о тесте"
+const aboutTest = document.getElementById('block-about');
+// кнопка "начать тест" в блоке "о тесте"
+const cardButton = aboutTest.querySelector('.card__button');
+// блок "тест"
+const testBlock = document.getElementById('block-main');
+// кнопка "вернуться к тесту" в блоке "о тесте"
+const buttonReturnToTheTest = aboutTest.querySelector('.card__link-button');
+// закрыть блок "о тесте"
+function closeAboutTest(){
+  aboutTest.classList.remove('card');
+  aboutTest.classList.add('hidden');
+}
+// открыть блок "тест"
+function openTest(){
+  testBlock.classList.remove('hidden');
+}
+// слушатель кнопки "начать тест" в блоке "о тесте"
+cardButton.addEventListener('click', startTest);
+// ф-я при нажатии на кнопку "начать тест" в блоке "о тесте"
+function startTest(){
+  // закрыть о тесте
+  closeAboutTest();
+  // открыть тест
+  openTest();
+}
+
+// Логика для страницы "О тесте (посмотреть результаты)"
+// открыть блок "о тесте"
+function openAboutTest(){
+  aboutTest.classList.add('card');
+  aboutTest.classList.remove('hidden');
+}
+// погасить кнопку "начать тест" в блоке "о тесте"
+function hideStartTestButton(){
+  cardButton.classList.add('hidden');
+}
+// активировать кнопку-ссылку "вернуться к тесту"
+
+function returnToTheTest(){
+  buttonReturnToTheTest.classList.remove('hidden');
+}
+
+/*
+ВНИМАНИЕ!!!
+функцию showTheClause() нужно повесить обработчику событий
+для ссылки/кнопки "посмотреть условия". Она откроет блок "о тесте"
+с погашенной кнопкой "начать тест" и с активной кнопкой "вернуться к тесту"
+*/
+// посмотреть условия
+function showTheClause(){
+  // открыть блок "о тесте"
+  openAboutTest();
+  // погасить кнопку "начать тест" в блоке "о тесте"
+  hideStartTestButton();
+  // активировать кнопку-ссылку "вернуться к тесту"
+  returnToTheTest();
+}

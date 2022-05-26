@@ -200,6 +200,7 @@
 .card{
   display: flex;
   flex-direction: column;
+  width: 872px;
   padding: 32px;
   background-color: #fff;
   border-radius: 16px;
@@ -257,7 +258,6 @@
   display: flex;
 }
 .card__row-icon{
-  background-image: url(../images/clock-icon.svg);
   width: 24px;
   height: 24px;
   background-repeat: no-repeat;
@@ -265,11 +265,25 @@
   background-position: center;
   margin: 0 8px 0 0;
 }
+
+.row-icon_img_checked{
+  background-image: url(../images/checked-icon.svg);
+}
+.row-icon_img_refresh{
+  background-image: url(../images/refresh-icon.svg);
+}
+.row-icon_img_clock{
+  background-image: url(../images/clock-icon.svg);
+}
+
+
 .card__row-text{
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
 }
+
+
 .card__button{
   background-color: #FF6600;
   color: #fff;
