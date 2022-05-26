@@ -227,9 +227,9 @@ buttonForward.addEventListener ('click', function () {
     showPositiveTextCompletedResult();
     updateBreadCrumps();
   }
-  else (
+  else {
     console.log('Пройдите тест!')
-  )
+  }
 })
 
 
