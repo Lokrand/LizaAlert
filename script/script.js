@@ -176,9 +176,12 @@ function showResultTest() {
     testRetake.classList.add('content__button_retake-wrong')
     results.classList.add('results__red');
     resultsTitle.textContent = '33%';
-    resultTextOne.remove();
-    resultTextTwo.textContent = 'К сожалению, вы не набрали проходной результат.';
-    resultTextThree.textContent = 'Нажмите "Пересдать", чтобы попробовать снова';
+    resultTextOne.textContent = 'К сожалению, вы не набрали проходной результат.';
+    resultTextTwo.textContent = 'Нажмите «Пересдать», чтобы попробовать снова.';
+
+    resultTextThree.remove();
+    // resultTextTwo.textContent = 'К сожалению, вы не набрали проходной результат.';
+    // resultTextThree.textContent = 'Нажмите «Пересдать», чтобы попробовать снова.';
     hideButton();
 
   }
@@ -187,7 +190,7 @@ function showResultTest() {
 
 
 //переменные с текстом окна завершения курса
-let completedCourseSection = document.querySelector('.completed-course');
+let completedCourseSection = document.querySelector('#block-result');
 let completedCourseSubtitle = completedCourseSection.querySelector('.completed-course__subtitle');
 let completedCourseTextOne = completedCourseSection.querySelector('#completed-course_text_one');
 let completedCourseTextTwo = completedCourseSection.querySelector('#completed-course_text_two');

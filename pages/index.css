@@ -41,6 +41,17 @@
 @import url(../blocks/content/__condition/content__condition.css);
 @import url(../blocks/content/__test-title/content__test-title.css);
 @import url(../blocks/content/__title/content__title.css);
+@import url(../blocks/content/__info/content__info.css);
+@import url(../blocks/content/__info-element/content__info-element.css);
+@import url(../blocks/content/__link-button/content__link-button.css);
+@import url(../blocks/content/__paragraph/content__paragraph.css);
+@import url(../blocks/content/__row/content__row.css);
+@import url(../blocks/content/__row-icon/_checked/content__row-icon_checked.css);
+@import url(../blocks/content/__row-icon/_clock/content__row-icon_clock.css);
+@import url(../blocks/content/__row-icon/_refresh/content__row-icon_refresh.css);
+@import url(../blocks/content/__row-icon/content__row-icon.css);
+@import url(../blocks/content/__row-text/content__row-text.css);
+@import url(../blocks/content/__start-button/content__start-button.css);
 
 @import url(../blocks/checkbox/checkbox.css);
 @import url(../blocks/checkbox/__input/checkbox__input.css);
@@ -197,113 +208,4 @@
 
 .button__hidden {
   display: none;
-}
-
-
-
-
-/* владислав корнюшенко */
-
-.card{
-  display: flex;
-  flex-direction: column;
-  width: 872px;
-  padding: 32px;
-  background-color: #fff;
-  border-radius: 16px;
-  box-shadow: 0px 0px 4px rgba(231, 232, 235, 0.6), 0px 4px 16px rgba(231, 232, 235, 0.6);
-  box-sizing: border-box;
-}
-
-.card__head{
-  display: flex;
-  justify-content: space-between;
-}
-
-.card__header{
-  font-size: 24px;
-  line-height: 28px;
-  font-weight: 700;
-}
-
-.card__link-button{
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 500;
-  color: #212329;
-  background-color: transparent;
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-.card__link-button:hover{
-  cursor: pointer;
-}
-
-.card__paragraph{
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 400;
-  margin: 32px 0;
-}
-
-.card__two-col-info-block{
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-.card__info-block-row{
-  display: flex;
-  justify-content: space-between;
-  margin: 0 0 16px 0;
-}
-.card__info-block-row:last-child{
-  margin: 0;
-}
-
-.card__row-name{
-  display: flex;
-}
-.card__row-icon{
-  width: 24px;
-  height: 24px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  margin: 0 8px 0 0;
-}
-
-.row-icon_img_checked{
-  background-image: url(../images/checked-icon.svg);
-}
-.row-icon_img_refresh{
-  background-image: url(../images/refresh-icon.svg);
-}
-.row-icon_img_clock{
-  background-image: url(../images/clock-icon.svg);
-}
-
-
-.card__row-text{
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 400;
-}
-
-
-.card__button{
-  background-color: #FF6600;
-  color: #fff;
-  border-radius: 16px;
-  padding: 12px 39px;
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 500;
-  margin: 32px 0 0 0;
-  align-self: center;
-  border: 0;
-}
-
-.card__button:hover{
-  cursor: pointer;
 }
