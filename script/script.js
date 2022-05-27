@@ -172,6 +172,7 @@ function showResultTest() {
     hideButton();
     testRetake.classList.add("content__button_retake-success");
     testRetake.classList.remove("content__button_retake-wrong");
+    btnMvdActive();
     testRetake.disabled = true;
   } else {
     testButton.classList.add("button__hidden");
@@ -226,17 +227,25 @@ function showPositiveTextCompletedResult() {
   completedCourseTextTwo.textContent =
     "Теперь вы можете участвовать в поисково-спасательных мероприятиях со своей собакой.";
 }
-
+const video = document.querySelector('#block-video')
 //показывает окно завершения курса
 buttonForward.addEventListener("click", function () {
+  if (video.classList.contains('content')&&(!video.classList.contains('hidden'))) {
+    aboutTest.classList.remove('hidden')
+    video.classList.add('hidden')
+    updateBreadCrumps()
+    btnMvdDisabled()
+  }
   if (results.classList.contains("results__red")) {
     hideResultsShowCompleted();
     updateBreadCrumps();
+    btnLableChange();
   } else if (results.classList.contains("results__green")) {
     completedCourseTextThree.remove();
     hideResultsShowCompleted();
     showPositiveTextCompletedResult();
     updateBreadCrumps();
+    btnLableChange();
   } else {
     console.log("Пройдите тест!");
   }
@@ -459,4 +468,5 @@ const testDescription = document.querySelector('#AboutTest')
 testDescription.addEventListener('click', () => {
   showTheClause();
   mainContentSection.classList.add("hidden");
+  btnMvdDisabled()
 })

@@ -8,6 +8,7 @@ const cmplCourse = document.querySelector('.completed-course');
 function btnMvdActive() {
   btnMoved.removeAttribute('disabled');
   btnMoved.classList.remove('button_moved_disabled');
+  btnArrowRight.src = "./images/arrow-right.svg";
 }
 
 // Функция для не активной кнопки, при НЕ ДОСТАТОЧНОМ количестве балов
@@ -35,4 +36,35 @@ function hiddenCard(card) {
 }
 
 
+const buttonBack = document.querySelector('#button_back')
 
+buttonBack.addEventListener('click', () => {
+  if (aboutTest.classList.contains('content')&&(!aboutTest.classList.contains('hidden'))) {
+    video.classList.remove('hidden')
+    aboutTest.classList.add('hidden')
+    btnMvdActive()
+    updateBreadCrumps()
+  }
+  if (testBlock.classList.contains('content')&&(!testBlock.classList.contains('hidden'))) {
+    testBlock.classList.add('hidden')
+    aboutTest.classList.remove('hidden')
+    updateBreadCrumps()
+    btnMvdDisabled()
+  }
+  if (buttonReturnToTheTest.classList.contains('hidden') === false) {
+    aboutTest.classList.add('hidden')
+    video.classList.add('hidden')
+    testBlock.classList.remove('hidden')
+    updateBreadCrumps()
+
+  }
+  if (completedCourseSection.classList.contains('hidden') === false) {
+    testBlock.classList.remove('hidden')
+    completedCourseSection.classList.add('hidden')
+    updateBreadCrumps()
+    document.querySelector(".breadcrumbs > ul > li:nth-child(3)").style.display = 'block'
+    // btnArrowRight.src = "./images/arrow-right-disabled.svg";
+    // btnMoved.textContent = 'Далее';
+  }
+
+})
