@@ -142,6 +142,7 @@
 }
 .content__about-test:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 

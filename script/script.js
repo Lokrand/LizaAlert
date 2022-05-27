@@ -420,6 +420,8 @@ buttonReturnToTheTest.addEventListener('click', returnToTheTest);
 function returnToTheTest(){
   cardButton.classList.remove('hidden');
   buttonReturnToTheTest.classList.add('hidden');
+  mainContentSection.classList.remove("hidden");
+  aboutTest.classList.add('hidden');
 }
 
 // Логика для страницы "О тесте (посмотреть результаты)"
@@ -451,3 +453,10 @@ function showTheClause() {
   // активировать кнопку-ссылку "вернуться к тесту"
   showReturnToTheTestButton();
 }
+
+const testDescription = document.querySelector('#AboutTest')
+
+testDescription.addEventListener('click', () => {
+  showTheClause();
+  mainContentSection.classList.add("hidden");
+})
