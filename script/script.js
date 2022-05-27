@@ -384,14 +384,13 @@ arrCoursesCompleted.forEach(function (item) {
 // блок "о тесте"
 const aboutTest = document.getElementById('block-about');
 // кнопка "начать тест" в блоке "о тесте"
-const cardButton = aboutTest.querySelector('.card__button');
+const cardButton = aboutTest.querySelector('.content__start-button');
 // блок "тест"
 const testBlock = document.getElementById('block-main');
 // кнопка "вернуться к тесту" в блоке "о тесте"
-const buttonReturnToTheTest = aboutTest.querySelector('.card__link-button');
+const buttonReturnToTheTest = aboutTest.querySelector('.content__link-button');
 // закрыть блок "о тесте"
 function closeAboutTest(){
-  aboutTest.classList.remove('card');
   aboutTest.classList.add('hidden');
 }
 // открыть блок "тест"
@@ -407,11 +406,17 @@ function startTest(){
   // открыть тест
   openTest();
 }
+// слушатель для кнопки "вернуться к тесту"
+buttonReturnToTheTest.addEventListener('click', returnToTheTest);
+// ф-я "вернуться к тесту"
+function returnToTheTest(){
+  cardButton.classList.remove('hidden');
+  buttonReturnToTheTest.classList.add('hidden');
+}
 
 // Логика для страницы "О тесте (посмотреть результаты)"
 // открыть блок "о тесте"
 function openAboutTest(){
-  aboutTest.classList.add('card');
   aboutTest.classList.remove('hidden');
 }
 // погасить кнопку "начать тест" в блоке "о тесте"
@@ -419,8 +424,7 @@ function hideStartTestButton(){
   cardButton.classList.add('hidden');
 }
 // активировать кнопку-ссылку "вернуться к тесту"
-
-function returnToTheTest(){
+function showReturnToTheTestButton(){
   buttonReturnToTheTest.classList.remove('hidden');
 }
 
@@ -437,5 +441,5 @@ function showTheClause(){
   // погасить кнопку "начать тест" в блоке "о тесте"
   hideStartTestButton();
   // активировать кнопку-ссылку "вернуться к тесту"
-  returnToTheTest();
+  showReturnToTheTestButton();
 }
