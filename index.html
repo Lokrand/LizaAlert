@@ -50,29 +50,23 @@
       <div class="blocks">
         <div>
           <!------------------------------------------------- Начало страницы №1 С видео ---------------------------------------------------->
-          <div class="content" id="block-video">
+          <section class="content" id="block-video">
             <div class="content__block">
-              <h1 class="content__title">Видео</h1>
+            <h2 class="content__title">Видео</h2>
             </div>
-            <div class="media-player">
-              <div class="media-player__control-bar">
-                <button type="button" class="media-player__button-play" aria-label="Play"></button>
-                <div class="media-player__timeline-bar">
-                  <img class="media-player__timeline" src="./images/progress-bar.svg">
-                  <button type="button" class="media-player__button-progress" aria-label="Время"></button>
-                </div>
-                <div class="media-player__sound">
-                  <button type="button" class="media-player__button-sound" aria-label="Sound"></button>
-                  <div class="media-player__sound-progress-bar">
-                    <button type="button" class="media-player__button-progress media-player__button-progress_mark" aria-label="Громкость"></button>
-                    <img class="media-player__sound-bar" src="./images/sound-bar.svg">
-                    <img class="media-player__sound-progress" src="./images/sound-progress.svg">
+              <div class="media-player">
+                <div class="media-player__control-bar">
+                  <button type="button" class="media-player__button-play" aria-label="Play"></button>
+                  <input type="range" id="range-time" class="media-player__timeline" min="0" max="100" value="0">
+                  <div class="media-player__sound">
+                    <button type="button" class="media-player__button-sound" aria-label="Sound"></button>
+                    <input type="range" id="range-time" class="media-player__sound-progress" min="0" max="100" value="40">
                   </div>
+                  <button type="button" class="media-player__button-fullscreen" aria-label="Во весь экран"></button>
                 </div>
-                <button type="button" class="media-player__button-fullscreen" aria-label="Во весь экран"></button>
               </div>
-            </div>
-          </div>
+            </section>
+
             <!------------------------------------------------- Конец страницы №1 С видео ---------------------------------------------------->
           <!------------------------------------------------- Начало страницы №2 О тесте  ---------------------------------------------------->
           <section class="content hidden" id="block-about">
@@ -488,5 +482,6 @@
   <script src="./script/button.js"></script>
   <script src="./script/script-breadcrumbs.js"></script>
   <script src="./script/script.js"></script>
+  <script src="./script/script-input.js"></script>
 </body>
 </html>
