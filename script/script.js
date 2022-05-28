@@ -340,11 +340,10 @@ const arrTitles = [...titles];
 
 const arrCoursesAll = [...optionsItem];
 let arrCoursesCompleted;
+let arrCoursesNonCompleted
 
 //Функция изменения цвета и иконок пунктов содержания при загрузке и нажатии на кнопку "вперед"
-
 function resetOptionColorIcon() {
-
   arrCoursesAll.forEach(function (item) {
     const optionItemCurrent = item.closest("ul").dataset.target;
     let activeItem;
@@ -355,13 +354,13 @@ function resetOptionColorIcon() {
         optionItemCurrent === course[2].dataset.path &&
         !el.closest("div").parentElement.classList.contains("hidden")
       ) {
-
         changeOptionColor(item);
         activeItem = arrCoursesAll.indexOf(item);
         arrCoursesCompleted = arrCoursesAll.slice(0, activeItem);
         arrCoursesCompleted.forEach(function (item) {
           changeIcon(item)
         })
+
 
       } if (
         item.lastElementChild.textContent === "Тест" &&
@@ -370,25 +369,77 @@ function resetOptionColorIcon() {
         !el.closest("section").classList.contains("hidden")
       ) {
         changeIcon(item);
-        activeItem = arrCoursesAll.indexOf(item);
-        arrCoursesCompleted = arrCoursesAll.slice(0, activeItem);
       }
-
     });
   });
-
 }
+
+
 resetOptionColorIcon()
 
+
+function resetOptionColorIconBackwards() {
+  arrCoursesAll.forEach(function (item) {
+    const optionItemCurrent = item.closest("ul").dataset.target;
+    let activeItem;
+    let prevItem;
+
+    arrTitles.forEach(function (el) {
+      if (
+        item.lastElementChild.textContent == el.textContent &&
+        optionItemCurrent === course[2].dataset.path &&
+        !el.closest("div").parentElement.classList.contains("hidden")
+      ) {
+
+        activeItem = arrCoursesAll.indexOf(item);
+        prevItem = activeItem - 1;
+        arrCoursesCompleted = arrCoursesAll.slice(0, prevItem);
+        arrCoursesCompleted.forEach(function (item) {
+          changeIcon(item)
+        })
+        changeOptionColor(item);
+        arrCoursesNonCompleted = arrCoursesAll.slice(activeItem+1);
+        arrCoursesNonCompleted .forEach(function (item) {
+          resetOption(item)
+        })
+      }
+    })
+  });
+}
+
 frowardButton.addEventListener("click", resetOptionColorIcon);
-buttonBack.addEventListener("click", resetOptionColorIcon);
+buttonBack.addEventListener("click", resetOptionColorIconBackwards);
 
 //Функция изменения цвета у текущей темы
+// При добавлении страниц необходимо будет добавтить
+//соответствующие иконки и условия
+
 function changeOptionColor(el) {
-  const icon = el.firstElementChild.childNodes[1];
+  const icon = el.firstElementChild;
   const optionText = el.childNodes[3];
   optionText.classList.add("sidebar-content__option_active");
-  icon.style.fill = "#F06000";
+
+if(optionText.textContent === "Тест") {
+  icon.src = "./images/i-test_orange.svg";
+}
+if(optionText.textContent === "Видео") {
+  icon.src = "./images/i-video_orange.svg";
+}
+}
+//Функция возврата пункта меню к белой теме. При добавлении страниц необходимо будет добавтить
+//соответствующиеусловия
+
+function resetOption(el) {
+  const icon = el.firstElementChild;
+  const optionText = el.childNodes[3];
+  optionText.classList.remove("sidebar-content__option_active");
+
+if(optionText.textContent === "Тест") {
+  icon.src = "./images/i-test.svg";
+}
+if(optionText.textContent === "Видео") {
+  icon.src = "./images/i-video.svg";
+}
 }
 
 //Функция смены иконки пройденной темы
