@@ -1,8 +1,8 @@
-const actionPanel = document.querySelector('.action-panel');
-const btnReturned = actionPanel.querySelector('.button_returned');
-const btnMoved = actionPanel.querySelector('.button_moved');
-const btnArrowRight = btnMoved.querySelector('#button__arrow_right');
-const cmplCourse = document.querySelector('.completed-course');
+const actionPanel = document.querySelector(".action-panel");
+const btnReturned = actionPanel.querySelector(".button_returned");
+const btnMoved = actionPanel.querySelector(".button_moved");
+const btnArrowRight = btnMoved.querySelector("#button__arrow_right");
+const cmplCourse = document.querySelector(".completed-course");
 
 // Функция для активной кнопки, при ДОСТАТОЧНОМ количестве балов
 function btnMvdActive() {
@@ -25,14 +25,12 @@ function btnLableChange() {
 
 // Функция, которая будет менять класс карточки, чтобы она стала НЕ ВИДИМОЙ
 function visibleCard(card) {
-  card.classList.add('visible')
   card.classList.remove('hidden')
 }
 
 // Функция, которая будет менять класс карточкии, чтобы она стала ВИДИМОЙ
 function hiddenCard(card) {
   card.classList.add('hidden')
-  card.classList.remove('visible')
 }
 
 
