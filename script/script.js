@@ -16,7 +16,6 @@ const radioLabelThird = document.querySelector("#radioLabelThird");
 const results = document.querySelector("#results");
 
 testButton.addEventListener("click", () => {
-  // TODO reaname testButton
   if (
     (testCheck1.checked || testCheck2.checked || testCheck3.checked) &&
     (testRadio1.checked || testRadio2.checked || testRadio3.checked)
@@ -24,7 +23,6 @@ testButton.addEventListener("click", () => {
     validateAnswers();
     showResultTest();
   }
-  // validateAnswers(q1Answer, q2Answer)
 });
 
 const showResult = () => {
@@ -40,15 +38,12 @@ const collectAnswers = (form) => {
   const answerList = [];
 
   for (const [index, element] of Array.from(form).entries()) {
-    // TODO remove [ index ] later
     answerList.push(element.checked);
   }
   return answerList;
 };
 
 const highlightAnswer = (element, highlightType, inputType) => {
-  // highlightType = correct / success / wrong / cross
-  //  check if highlightType have correct value
   if (inputType === "checkbox") {
     const validTypes = ["success", "correct"];
     if (validTypes.includes(highlightType)) {
@@ -90,7 +85,6 @@ function ifCurrect() {
   const q1Answer = collectAnswers(document.forms["testFirst"]);
   const q2Answer = collectAnswers(document.forms["testSecond"]);
   for (let i = 0; i < document.forms["testSecond"].elements.length; i++) {
-    // check if both of forms have at least one answer
     if (
       q1Answer.some((x) => x) &&
       document.forms["testSecond"].elements[i].checked
@@ -101,7 +95,6 @@ function ifCurrect() {
 }
 
 const checkAnswer = (given_answer, correct_answer) => {
-  // correct success wrong cross
   if (correct_answer) {
     if (given_answer) return "success";
     else return "correct";
