@@ -227,14 +227,17 @@ function showPositiveTextCompletedResult() {
   completedCourseTextTwo.textContent =
     "Теперь вы можете участвовать в поисково-спасательных мероприятиях со своей собакой.";
 }
-const video = document.querySelector('#block-video')
+const video = document.querySelector("#block-video");
 //показывает окно завершения курса
 buttonForward.addEventListener("click", function () {
-  if (video.classList.contains('content')&&(!video.classList.contains('hidden'))) {
-    aboutTest.classList.remove('hidden')
-    video.classList.add('hidden')
-    updateBreadCrumps()
-    btnMvdDisabled()
+  if (
+    video.classList.contains("content") &&
+    !video.classList.contains("hidden")
+  ) {
+    aboutTest.classList.remove("hidden");
+    video.classList.add("hidden");
+    updateBreadCrumps();
+    btnMvdDisabled();
   }
   if (results.classList.contains("results__red")) {
     hideResultsShowCompleted();
@@ -337,9 +340,10 @@ const arrTitles = [...titles];
 const arrCoursesAll = [...optionsItem];
 let arrCoursesCompleted;
 
-//Функция изменения цвета и иконок пунктов содержания
+//Функция изменения цвета и иконок пунктов содержания при загрузке и нажатии на кнопку "вперед"
 
 function resetOptionColorIcon() {
+
   arrCoursesAll.forEach(function (item) {
     const optionItemCurrent = item.closest("ul").dataset.target;
     let activeItem;
@@ -350,10 +354,15 @@ function resetOptionColorIcon() {
         optionItemCurrent === course[2].dataset.path &&
         !el.closest("div").parentElement.classList.contains("hidden")
       ) {
+
         changeOptionColor(item);
         activeItem = arrCoursesAll.indexOf(item);
         arrCoursesCompleted = arrCoursesAll.slice(0, activeItem);
-      } else if (
+        arrCoursesCompleted.forEach(function (item) {
+          changeIcon(item)
+        })
+
+      } if (
         item.lastElementChild.textContent === "Тест" &&
         el.textContent === "Курс завершен" &&
         optionItemCurrent === course[2].dataset.path &&
@@ -363,13 +372,15 @@ function resetOptionColorIcon() {
         activeItem = arrCoursesAll.indexOf(item);
         arrCoursesCompleted = arrCoursesAll.slice(0, activeItem);
       }
+
     });
   });
-}
 
-resetOptionColorIcon();
+}
+resetOptionColorIcon()
 
 frowardButton.addEventListener("click", resetOptionColorIcon);
+buttonBack.addEventListener("click", resetOptionColorIcon);
 
 //Функция изменения цвета у текущей темы
 function changeOptionColor(el) {
@@ -390,25 +401,19 @@ function changeIcon(el) {
   optionText.classList.remove("sidebar-content__option_active");
 }
 
-//Смена иконок от начала содержания до текущего элемента
-
-arrCoursesCompleted.forEach(function (item) {
-  changeIcon(item);
-});
-
 
 // Логика для страницы №2 о тесте
 // блок "о тесте"
 const aboutTest = document.getElementById("block-about");
 // кнопка "начать тест" в блоке "о тесте"
-const cardButton = aboutTest.querySelector('.content__start-button');
+const cardButton = aboutTest.querySelector(".content__start-button");
 // блок "тест"
 const testBlock = document.getElementById("block-main");
 // кнопка "вернуться к тесту" в блоке "о тесте"
-const buttonReturnToTheTest = aboutTest.querySelector('.content__link-button');
+const buttonReturnToTheTest = aboutTest.querySelector(".content__link-button");
 // закрыть блок "о тесте"
-function closeAboutTest(){
-  aboutTest.classList.add('hidden');
+function closeAboutTest() {
+  aboutTest.classList.add("hidden");
 }
 // открыть блок "тест"
 function openTest() {
@@ -424,27 +429,27 @@ function startTest() {
   openTest();
 }
 // слушатель для кнопки "вернуться к тесту"
-buttonReturnToTheTest.addEventListener('click', returnToTheTest);
+buttonReturnToTheTest.addEventListener("click", returnToTheTest);
 // ф-я "вернуться к тесту"
-function returnToTheTest(){
-  cardButton.classList.remove('hidden');
-  buttonReturnToTheTest.classList.add('hidden');
+function returnToTheTest() {
+  cardButton.classList.remove("hidden");
+  buttonReturnToTheTest.classList.add("hidden");
   mainContentSection.classList.remove("hidden");
-  aboutTest.classList.add('hidden');
+  aboutTest.classList.add("hidden");
 }
 
 // Логика для страницы "О тесте (посмотреть результаты)"
 // открыть блок "о тесте"
-function openAboutTest(){
-  aboutTest.classList.remove('hidden');
+function openAboutTest() {
+  aboutTest.classList.remove("hidden");
 }
 // погасить кнопку "начать тест" в блоке "о тесте"
 function hideStartTestButton() {
   cardButton.classList.add("hidden");
 }
 // активировать кнопку-ссылку "вернуться к тесту"
-function showReturnToTheTestButton(){
-  buttonReturnToTheTest.classList.remove('hidden');
+function showReturnToTheTestButton() {
+  buttonReturnToTheTest.classList.remove("hidden");
 }
 
 /*
@@ -463,10 +468,10 @@ function showTheClause() {
   showReturnToTheTestButton();
 }
 
-const testDescription = document.querySelector('#AboutTest')
+const testDescription = document.querySelector("#AboutTest");
 
-testDescription.addEventListener('click', () => {
+testDescription.addEventListener("click", () => {
   showTheClause();
   mainContentSection.classList.add("hidden");
-  btnMvdDisabled()
-})
+  btnMvdDisabled();
+});
