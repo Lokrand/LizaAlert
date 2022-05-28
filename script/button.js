@@ -56,15 +56,17 @@ buttonBack.addEventListener('click', () => {
     video.classList.add('hidden')
     testBlock.classList.remove('hidden')
     updateBreadCrumps()
-
+    btnMvdDisabled()
+    if (results.classList.contains("results__green")||results.classList.contains("results__red")) {
+      btnMvdActive()
+    }
   }
   if (completedCourseSection.classList.contains('hidden') === false) {
     testBlock.classList.remove('hidden')
     completedCourseSection.classList.add('hidden')
     updateBreadCrumps()
     document.querySelector(".breadcrumbs > ul > li:nth-child(3)").style.display = 'block'
-    // btnArrowRight.src = "./images/arrow-right-disabled.svg";
-    // btnMoved.textContent = 'Далее';
+    btnMoved.textContent = 'Далее';
+    resetOptionColorIcon()
   }
-
 })

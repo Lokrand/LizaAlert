@@ -431,6 +431,9 @@ function returnToTheTest(){
   buttonReturnToTheTest.classList.add('hidden');
   mainContentSection.classList.remove("hidden");
   aboutTest.classList.add('hidden');
+  if (results.classList.contains("results__green")||results.classList.contains("results__red")) {
+    btnMvdActive()
+  }
 }
 
 // Логика для страницы "О тесте (посмотреть результаты)"
@@ -447,24 +450,12 @@ function showReturnToTheTestButton(){
   buttonReturnToTheTest.classList.remove('hidden');
 }
 
-/*
-ВНИМАНИЕ!!!
-функцию showTheClause() нужно повесить обработчику событий
-для ссылки/кнопки "посмотреть условия". Она откроет блок "о тесте"
-с погашенной кнопкой "начать тест" и с активной кнопкой "вернуться к тесту"
-*/
-// посмотреть условия
 function showTheClause() {
-  // открыть блок "о тесте"
   openAboutTest();
-  // погасить кнопку "начать тест" в блоке "о тесте"
   hideStartTestButton();
-  // активировать кнопку-ссылку "вернуться к тесту"
   showReturnToTheTestButton();
 }
-
 const testDescription = document.querySelector('#AboutTest')
-
 testDescription.addEventListener('click', () => {
   showTheClause();
   mainContentSection.classList.add("hidden");
