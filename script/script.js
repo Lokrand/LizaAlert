@@ -238,6 +238,7 @@ buttonForward.addEventListener("click", function () {
     video.classList.add("hidden");
     updateBreadCrumps();
     btnMvdDisabled();
+    testBlock.classList.add('hidden');
   }
   if (results.classList.contains("results__red")) {
     hideResultsShowCompleted();
