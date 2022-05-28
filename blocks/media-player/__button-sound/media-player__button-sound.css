@@ -3,7 +3,7 @@
   height: 20px;
   left: 2px;
   border-style: none;
-  background-color: #212329;
+  background-color: transparent;
   background-image: url('../../../images/sound.svg');
   background-position: center;
   background-repeat: no-repeat;
@@ -11,4 +11,11 @@
   margin-bottom: auto;
   cursor: pointer;
   box-sizing: border-box;
+  opacity: 1;
+  transition: opacity .3s;
+}
+
+.media-player__button-sound:hover {
+  opacity: 0.8;
+  transition: opacity .3s;
 }
