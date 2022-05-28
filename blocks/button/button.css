@@ -14,4 +14,9 @@
   font-weight: 500;
   font-family: 'Golos', sans-serif;
   cursor: pointer;
+  transition: opacity .2s linear;
+}
+
+.button:hover {
+  opacity: .6;
 }
