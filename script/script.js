@@ -152,12 +152,13 @@ let resultTextTwo = document.querySelector("#results_text_two");
 //переменная с третьей строкой текста в блоке с результатами
 let resultTextThree = document.querySelector("#results_text_three");
 
-// //функция, которая скрывает кнопку Проверить и открывает кнопку Пересдать
+// //функция, которая скрывает кнопку Проверить и показывает кнопку Пересдать
 const hideButton = function () {
   testButton.classList.add("button__hidden");
   testRetake.classList.remove("button__hidden");
 };
 
+//функция, которая показывает кнопку Проверить и скрывает кнопку Пересдать
 const showButton = function () {
   testButton.classList.remove("button__hidden");
   testRetake.classList.add("button__hidden");
@@ -174,6 +175,12 @@ function showResultTest() {
     testRetake.classList.remove("content__button_retake-wrong");
     btnMvdActive();
     testRetake.disabled = true;
+    checkboxLabelFirst.classList.remove('checkbox__label_colored');
+    checkboxLabelFirst.classList.remove('checkbox__label_selected');
+    checkboxLabelSecond.classList.remove('checkbox__label_colored');
+    checkboxLabelSecond.classList.remove('checkbox__label_selected');
+    checkboxLabelThird.classList.remove('checkbox__label_colored');
+    checkboxLabelThird.classList.remove('checkbox__label_selected');
   } else {
     testButton.classList.add("button__hidden");
     testRetake.classList.remove("button__hidden");
@@ -184,7 +191,12 @@ function showResultTest() {
     resultTextOne.textContent =
       "К сожалению, вы не набрали проходной результат.";
     resultTextTwo.textContent = "Нажмите «Пересдать», чтобы попробовать снова.";
-
+    checkboxLabelFirst.classList.remove('checkbox__label_colored');
+    checkboxLabelFirst.classList.remove('checkbox__label_selected');
+    checkboxLabelSecond.classList.remove('checkbox__label_colored');
+    checkboxLabelSecond.classList.remove('checkbox__label_selected');
+    checkboxLabelThird.classList.remove('checkbox__label_colored');
+    checkboxLabelThird.classList.remove('checkbox__label_selected');
     resultTextThree.remove();
     // resultTextTwo.textContent = 'К сожалению, вы не набрали проходной результат.';
     // resultTextThree.textContent = 'Нажмите «Пересдать», чтобы попробовать снова.';
@@ -209,17 +221,17 @@ let completedCourseTextThree = completedCourseSection.querySelector(
 //переменная с блоком основного контента
 let mainContentSection = document.querySelector("#block-main");
 
-//переменная с блоком основного контента
+//переменная с кнопкой вперед
 let buttonForward = document.querySelector("#button_forward");
 
-//функция скрывающая сексии с результатами и основного контента и показывающее результирующее окно курса
+//функция скрывающая секции с результатами и основного контента и показывающее результирующее окно курса
 function hideResultsShowCompleted() {
   results.classList.add("hidden");
   mainContentSection.classList.add("hidden");
   completedCourseSection.classList.remove("hidden");
 }
 
-//функция, которая меняет текст в сексии окна окончании курса при негативном результате
+//функция, которая меняет текст в секции окна окончании курса при негативном результате
 function showPositiveTextCompletedResult() {
   completedCourseSubtitle.textContent = "Поздравляем!";
   completedCourseTextOne.textContent =
@@ -283,6 +295,15 @@ testRetake.addEventListener("click", function () {
   radioLabelThird.classList.remove("radio__label-cross-answer");
   radioLabelThird.classList.remove("radio__label-wrong-answer");
   radioLabelThird.classList.add("radio__label");
+  radioLabelSecond.classList.remove('radio__label_colored');
+  radioLabelSecond.classList.remove('radio__label_selected');
+  radioLabelSecond.classList.remove('radio__label_bordered');
+  radioLabelFirst.classList.remove('radio__label_colored');
+  radioLabelFirst.classList.remove('radio__label_selected');
+  radioLabelFirst.classList.remove('radio__label_bordered');
+  radioLabelThird.classList.remove('radio__label_colored');
+  radioLabelThird.classList.remove('radio__label_selected');
+  radioLabelThird.classList.remove('radio__label_bordered');
   document.forms["testFirst"].reset();
   document.forms["testSecond"].reset();
   showButton();
@@ -469,3 +490,85 @@ testDescription.addEventListener("click", () => {
   mainContentSection.classList.add("hidden");
   btnMvdDisabled();
 });
+
+// при клике на первый чекбокс добавлять\убирать цвет и галочку
+checkboxLabelFirst.addEventListener("click", function () {
+  if (!(results.classList.contains("results__green"))&&!(results.classList.contains("results__red"))) {
+  checkboxLabelFirst.classList.toggle('checkbox__label_colored');
+  checkboxLabelFirst.classList.toggle('checkbox__label_selected');
+   } else {
+    checkboxLabelFirst.classList.remove('checkbox__label_colored');
+    checkboxLabelFirst.classList.remove('checkbox__label_selected');
+  }
+});
+
+// при клике на второй чекбокс добавлять\убирать цвет и галочку
+checkboxLabelSecond.addEventListener("click", function () {
+  if (!(results.classList.contains("results__green"))&&!(results.classList.contains("results__red")))  {
+    checkboxLabelSecond.classList.toggle('checkbox__label_colored');
+    checkboxLabelSecond.classList.toggle('checkbox__label_selected');
+    } else {
+      checkboxLabelSecond.classList.remove('checkbox__label_colored');
+      checkboxLabelSecond.classList.remove('checkbox__label_selected');
+    }
+});
+
+// при клике на третий чекбокс добавлять\убирать цвет и галочку
+checkboxLabelThird.addEventListener("click", function () {
+  if (!(results.classList.contains("results__green"))&&!(results.classList.contains("results__red")))  {
+    checkboxLabelThird.classList.toggle('checkbox__label_colored');
+    checkboxLabelThird.classList.toggle('checkbox__label_selected');
+    } else {
+      checkboxLabelThird.classList.remove('checkbox__label_colored');
+      checkboxLabelThird.classList.remove('checkbox__label_selected');
+    }
+});
+
+// при клике на первую радиокнопку добавлять\убирать цвет, точку и границу
+radioLabelFirst.addEventListener("click", function () {
+  radioLabelFirst.classList.add('radio__label_colored');
+  radioLabelFirst.classList.add('radio__label_selected');
+  radioLabelFirst.classList.add('radio__label_bordered');
+
+  radioLabelSecond.classList.remove('radio__label_colored');
+  radioLabelSecond.classList.remove('radio__label_selected');
+  radioLabelSecond.classList.remove('radio__label_bordered');
+
+  radioLabelThird.classList.remove('radio__label_colored');
+  radioLabelThird.classList.remove('radio__label_selected');
+  radioLabelThird.classList.remove('radio__label_bordered');
+
+});
+
+// при клике на вторую радиокнопку добавлять\убирать цвет, точку и границу
+radioLabelSecond.addEventListener("click", function () {
+  radioLabelSecond.classList.add('radio__label_colored');
+  radioLabelSecond.classList.add('radio__label_selected');
+  radioLabelSecond.classList.add('radio__label_bordered');
+
+  radioLabelFirst.classList.remove('radio__label_colored');
+  radioLabelFirst.classList.remove('radio__label_selected');
+  radioLabelFirst.classList.remove('radio__label_bordered');
+
+  radioLabelThird.classList.remove('radio__label_colored');
+  radioLabelThird.classList.remove('radio__label_selected');
+  radioLabelThird.classList.remove('radio__label_bordered');
+
+});
+
+// при клике на третью радиокнопку добавлять\убирать цвет, точку и границу
+radioLabelThird.addEventListener("click", function () {
+  radioLabelThird.classList.add('radio__label_colored');
+  radioLabelThird.classList.add('radio__label_selected');
+  radioLabelThird.classList.add('radio__label_bordered');
+
+  radioLabelSecond.classList.remove('radio__label_colored');
+  radioLabelSecond.classList.remove('radio__label_selected');
+  radioLabelSecond.classList.remove('radio__label_bordered');
+
+  radioLabelFirst.classList.remove('radio__label_colored');
+  radioLabelFirst.classList.remove('radio__label_selected');
+  radioLabelFirst.classList.remove('radio__label_bordered');
+
+});
+

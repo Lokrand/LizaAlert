@@ -63,6 +63,9 @@
 @import url(../blocks/checkbox/__label/checkbox__label.css);
 @import url(../blocks/checkbox/__label-success/checkbox__label-success.css);
 @import url(../blocks/checkbox/__label-correct/checkbox__label-correct.css);
+@import url(../blocks/checkbox/__label/_colored/checkbox__label_colored.css);
+@import url(../blocks/checkbox/__label/_selected/checkbox__label_selected.css);
+
 
 @import url(../blocks/radio/radio.css);
 @import url(../blocks/radio/__input/radio__input.css);
@@ -71,6 +74,9 @@
 @import url(../blocks/radio/__label-cross-answer/radio__label-cross-answer.css);
 @import url(../blocks/radio/__label-success-answer/radio__label-success-answer.css);
 @import url(../blocks/radio/__label-wrong-answer/radio__label-wrong-answer.css);
+@import url(../blocks/radio/__label/_colored/checkbox__label_colored.css);
+@import url(../blocks/radio/__label/_selected/radio__label_selected.css);
+@import url(../blocks/radio/__label/_bordered/radio__label_bordered.css);
 
 @import url(../blocks/completed-course/completed-course.css);
 @import url(../blocks/completed-course/__title/completed-course__title.css);
@@ -102,7 +108,7 @@
 
 @import url(../blocks/action-panel/action-panel.css);
 @import url(../blocks/button/button.css);
-@import url(../blocks/button/button_returned.css);
-@import url(../blocks/button/button_moved.css);
-@import url(../blocks/button/_moved_disabled/button_moved_disabled.css);
+@import url(../blocks/button/__moved/button__moved.css);
+@import url(../blocks/button/__returned/button__returned.css);
+@import url(../blocks/button/__moved/_disabled/button__moved_disabled.css);
 @import url(../blocks/button/__hidden/button__hidden.css);

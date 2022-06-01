@@ -1,13 +1,13 @@
 const actionPanel = document.querySelector('.action-panel');
-const btnReturned = actionPanel.querySelector('.button_returned');
-const btnMoved = actionPanel.querySelector('.button_moved');
+const btnReturned = actionPanel.querySelector('.button__returned');
+const btnMoved = actionPanel.querySelector('.button__moved');
 const btnArrowRight = btnMoved.querySelector('#button__arrow_right');
 const cmplCourse = document.querySelector('.completed-course');
 
 // Функция для активной кнопки, при ДОСТАТОЧНОМ количестве балов
 function btnMvdActive() {
   btnMoved.removeAttribute('disabled');
-  btnMoved.classList.remove('button_moved_disabled');
+  btnMoved.classList.remove('button__moved_disabled');
   btnArrowRight.src = "./images/arrow-right.svg";
 }
 
@@ -15,7 +15,7 @@ function btnMvdActive() {
 function btnMvdDisabled() {
   btnArrowRight.src = "./images/arrow-right-disabled.svg";
   btnMoved.setAttribute('disabled', true);
-  btnMoved.classList.add('button_moved_disabled');
+  btnMoved.classList.add('button__moved_disabled');
 }
 
 // Функция для замены Далее/Завершить
